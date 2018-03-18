@@ -1,0 +1,3 @@
+look into using klogger
+add it as $protected in dao so you can use it globably
+    when dao has been required, fantastic for logging

@@ -1,0 +1,163 @@
+.body{
+    overflow:hidden; background-color:rgba(100,100,100,1);
+}
+
+
+/*header buttons*/
+.button {
+    text-decoration: none;
+    color: rgba(186,186,186, 0.8);
+    background: rgba(10,10,10,.1);
+    padding: 10px 15px;
+    margin: 10, 10;
+    border-radius: 4px;
+    font-weight: normal;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in-out;
+}
+
+.button_current {
+    text-decoration: none;
+    color: rgba(0,0,0, 0.8);
+    background: rgba(186,186,186,.5);
+    padding: 10px 15px;
+    margin: 10, 10;
+    border-radius: 4px;
+    font-weight: normal;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .4);
+}
+
+.glow-button:hover {
+    color: rgba(255, 255, 255, 1);
+    background: rgba(20,20,20,1);
+    box-shadow: 0 5px 25px rgba(255, 255, 255, .4);
+}
+
+.container > div {
+    display: inline-block;
+    display: -moz-inline-box;
+    *display: inline;
+    /* For IE7 */
+    zoom: 1;
+    /* Trigger hasLayout */
+    margin-left: 2%;
+    width: 32%;
+    text-align: center;
+}
+
+.container > div:first-child {
+    margin-left: 0;
+}
+
+
+
+/*scrollable text field*/
+.myBox {
+    border-radius: 25px;
+    padding: 5px;
+    font: 24px/36px sans-serif;
+    width: 200px;
+    height: 40%!important;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: rgba(10,10,10,.1);
+    color: gray;
+    direction: ltr;
+}
+
+.glow-box:hover {
+    direction: ltr;
+    background: rgba(20,20,20,1);
+    box-shadow: 0 0px 0px 1px rgba(0, 0, 0, .4);
+    position: relative;
+    color: white;
+}
+
+
+
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background:  rgba(100,100,100,0);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-track:hover {
+/*    background:  rgba(255,255,255,1);*/
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background:  rgba(50,50,50,1);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background:  rgba(50,50,50,1);
+}
+
+
+
+
+
+/*location buttons*/
+.loc_button {
+    text-decoration: none;
+    color: rgba(186,186,186, 0.8);
+/*    background: rgb(0,0,0,0);*/
+    padding: 5px 5px 5px 5px;
+
+    border-radius: 4px;
+    font-weight: normal;
+    transition: all 0.1s ease-in-out;
+}
+
+.glow_loc:hover {
+/*
+    text-decoration: none;
+    color: rgba(186,186,186, 0.8);
+    background: rgb(0,0,0);
+    padding: 10px 15px;
+    margin: 10, 10;
+    border-radius: 4px;
+    font-weight: normal;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in-out;
+    color: rgba(255, 255, 255, 1);
+*/
+/*    box-shadow: 0 5px 15px rgba(0, 200, 0, .4);*/
+/*    background: rgb(#888888);*/
+    color: black;
+    background: rgba(255,255,255,1);
+    box-shadow: 0px 0px 10px 2px rgb(255,255,255);
+}
+
+
+
+
+li {
+    padding: 2px 0px 15px 0px;
+}
+
+/*map*/
+
+
+#map{
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: -200px;
+    left: 0;
+    right: 0;
+    z-index: 0;
+}
+
+#container {
+    z-index: 100;
+    position: relative;
+}
