@@ -1,4 +1,3 @@
-//<?php header( 'Location: /user.php' ) ;  ?>
 
 <head>
     <link rel="stylesheet" href="stylesheets/main.css">
@@ -6,7 +5,7 @@
 
 <body class="body">
 
-
+<h1>HELLO WORLD MOTHA FUCKAS</h1>
 
     <div id="gmap" style="top:.5px">
         <div id="gmap-draw">
