@@ -1,12 +1,19 @@
+DROP table users;
+DROP table pictures;
+
 CREATE TABLE users (
+    user_id    INT(8) NOT NULL AUTO_INCREMENT,
     user_email  VARCHAR(255) NOT NULL,
     user_name   VARCHAR(30) NOT NULL,
     user_pass   VARCHAR(255) NOT NULL,
     user_date   DATETIME DEFAULT CURRENT_TIMESTAMP,
     user_mod    TINYINT(1) DEFAULT 0,
     UNIQUE INDEX user_name_unique (user_name),
-    PRIMARY KEY (user_email)
+    PRIMARY KEY (user_id)
 );
+
+INSERT INTO users (user_email, user_name, user_pass)
+    VALUES('kepa@kepa.kepa', 'kepa', 'kepa');
 
 CREATE TABLE pictures (
     pic_id     INT(8) NOT NULL AUTO_INCREMENT,

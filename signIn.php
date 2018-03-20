@@ -21,9 +21,8 @@
                 <div id="content">
                     <form>
                         <input type="text" placeholder="username" class="text_box" name="username"><br>
-                        <input type="password" placeholder="password" class="text_box" name="password">
-                        <br>
-                        <input type="submit" class="submit" value="Sign In" href="browse.php">
+                        <input type="password" placeholder="password" class="text_box" name="password"><br>
+                        <input type="submit" name="signin" class="submit" value="Sign In" action="browse.php" method="get">
                     </form>
                 </div>
             </div>

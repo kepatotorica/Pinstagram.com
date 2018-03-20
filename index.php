@@ -16,13 +16,15 @@
             <div class="signIn">
                 <div id="container" >
                     <div id="content">
-                        <form>
+<!--                        <form>-->
+                        <form name="form" action="/outPut.php" method="POST">
+<!--                            <form name="frm" action="/user.php" method="POST">-->
 <!--#sql           allow a user to sign in so check with sql to see if a entry exists with user and password the same-->
 <!--                            also renavigate-->
                             <input type="text" placeholder="username" class="text_box" name="username"><br>
-                            <input type="password" placeholder="password" class="text_box" name="password">
-                            <br>
-                            <input type="submit" class="submit" value="Submit" href="browse.php">
+                            <input type="text" placeholder="email" class="text_box" name="email"><br>
+                            <input type="password" placeholder="password" class="text_box" name="password"><br>
+                            <input type="submit" class="submit" value="Register">
                         </form>
                     </div>
                 </div>
