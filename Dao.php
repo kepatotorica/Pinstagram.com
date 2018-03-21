@@ -55,6 +55,24 @@
 //           $this->logger->logDebug(__FUNCTION__ . " " . print_r($results,1));
            return $results;
        }
+       public function saveImg ($email, $name, $pass) {
+           $conn = $this->getConnection();
+           $query = $conn->prepare("INSERT INTO users (user_email, user_name, user_pass) VALUES (:email, :name, :pass)");
+           $query->bindParam(':email', $email);
+           $query->bindParam(':name', $name);
+           $query->bindParam(':pass', $pass);
+           //           $this->logger->logDebug(__FUNCTION__ . " name=[{$name}] comment=[{$comment}]");
+           $query->execute();
+       }
+         public function getImg () {
+             $conn = $this->getConnection();
+             $query = $conn->prepare("select * from users");
+             $query->setFetchMode(PDO::FETCH_ASSOC);
+             $query->execute();
+             $results = $query->fetchAll();
+  //           $this->logger->logDebug(__FUNCTION__ . " " . print_r($results,1));
+             return $results;
+         }
 //        public function deleteComment ($id) {
 //            $conn = $this->getConnection();
 //            $query = $conn->prepare("DELETE FROM comments WHERE id = :id");

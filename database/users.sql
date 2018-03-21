@@ -27,4 +27,3 @@ CREATE TABLE pictures (
     path       VARCHAR(255) NOT NULL,
     PRIMARY KEY (pic_id)
 );
-

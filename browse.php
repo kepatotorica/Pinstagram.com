@@ -1,4 +1,13 @@
 <!--sessions and cookies stuff-->
+<?php
+require_once 'Dao.php';
+$dao = new Dao();
+$dao->saveUser($_POST["email"],$_POST["username"],$_POST["password"]);
+$users = $dao->getUsers();
+$id = $users[1]['user_id'];
+$email = $users[1]['user_email'];
+$name = $users[1]['user_name'];
+?>
 <head>
     <link rel="stylesheet" href="stylesheets/main.css">
 </head>
@@ -48,16 +57,26 @@
 
         <div class="myBox glow-box">
             <ul>
-
+<!--#TODO make it by image not by user, or maybe both. I am not sure
+      we could show browse as lit if you click a user only if session id user !match
+      the name you click on then it could just propogate the mypictures page
+      and have the separate header with browse lit up. It would be much esier to just make
+      it pictures. I think that is what I will do-->
 <!--#sql                find and list all users by name, later try to implement a search function-->
-                <li><a href="#" class="loc_button glow_loc">Jen</a></li><li><a href="#" class="loc_button glow_loc">Tucker</a></li><li><a href="#" class="loc_button glow_loc">Randy</a></li>
+      <?php
+          for( $i = 0; $i<count($users); $i++ ) {
+          echo '<li><a href="#" class="loc_button glow_loc">' . $users[$i]['user_name']  . '</a></li>';
+          }
+          unset($i);
+      ?>
+                <!-- <li><a href="#" class="loc_button glow_loc">Jen</a></li><li><a href="#" class="loc_button glow_loc">Tucker</a></li><li><a href="#" class="loc_button glow_loc">Randy</a></li>
                 <li><a href="#" class="loc_button glow_loc">Lanzo</a></li><li><a href="#" class="loc_button glow_loc">Prince Charming</a></li><li><a href="#" class="loc_button glow_loc">America</a></li>
                 <li><a href="#" class="loc_button glow_loc">Jen</a></li><li><a href="#" class="loc_button glow_loc">Tucker</a></li><li><a href="#" class="loc_button glow_loc">Randy</a></li>
                 <li><a href="#" class="loc_button glow_loc">Lanzo</a></li><li><a href="#" class="loc_button glow_loc">Prince Charming</a></li><li><a href="#" class="loc_button glow_loc">America</a></li>
                 <li><a href="#" class="loc_button glow_loc">Jen</a></li><li><a href="#" class="loc_button glow_loc">Tucker</a></li><li><a href="#" class="loc_button glow_loc">Randy</a></li>
                 <li><a href="#" class="loc_button glow_loc">Lanzo</a></li><li><a href="#" class="loc_button glow_loc">Prince Charming</a></li><li><a href="#" class="loc_button glow_loc">America</a></li>
                 <li><a href="#" class="loc_button glow_loc">Jen</a></li><li><a href="#" class="loc_button glow_loc">Tucker</a></li><li><a href="#" class="loc_button glow_loc">Randy</a></li>
-                <li><a href="#" class="loc_button glow_loc">Lanzo</a></li><li><a href="#" class="loc_button glow_loc">Prince Charming</a></li><li><a href="#" class="loc_button glow_loc">America</a></li>
+                <li><a href="#" class="loc_button glow_loc">Lanzo</a></li><li><a href="#" class="loc_button glow_loc">Prince Charming</a></li><li><a href="#" class="loc_button glow_loc">America</a></li> -->
 
             </ul>
         </div>
