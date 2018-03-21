@@ -33,7 +33,7 @@ $email = $users[1]['user_email'];
 <!-- Your email: <?php //echo $_POST["email"]; ?><br> -->
 <!-- Your pass: <?php //echo $_POST["password"]; ?><br> -->
 
-<?php echo $email . 'we could still ref it'; ?>
+<!-- <?php //echo $email . 'we could still ref it'; ?> -->
 
 <form name="form" action="/index.php" method="POST">
     <input type="submit" class="submit" value="Register">
