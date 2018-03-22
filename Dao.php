@@ -11,14 +11,14 @@
  //        $this->logger = new KLogger('/Users/crk/projects/cs401/src/www', KLogger::DEBUG);
  //    }
  //
- //    if(!mysql_connect($host, $user,  $pass))
- //    {
- //        exit('Error: could not establish database connection');
- //    }
- //    if(!mysql_select_db($db)
- //       {
- //           exit('Error: could not select the database');
- //       }
+    if(!mysql_connect($host, $user,  $pass))
+    {
+        exit('Error: could not establish database connection');
+    }
+    if(!mysql_select_db($db)
+       {
+           exit('Error: could not select the database');
+       }
 
         private function getConnection () {
             try {
@@ -55,29 +55,21 @@
 //           $this->logger->logDebug(__FUNCTION__ . " " . print_r($results,1));
            return $results;
        }
-       public function saveImg ($email, $name, $pass) {
+       public function saveImg () {
            $conn = $this->getConnection();
-           $query = $conn->prepare("INSERT INTO users (user_email, user_name, user_pass) VALUES (:email, :name, :pass)");
-           $query->bindParam(':email', $email);
-           $query->bindParam(':name', $name);
-           $query->bindParam(':pass', $pass);
+           $query = $conn->prepare("INSERT INTO pictures () VALUES ()");
+           // $query->bindParam(':email', $email);
            //           $this->logger->logDebug(__FUNCTION__ . " name=[{$name}] comment=[{$comment}]");
            $query->execute();
        }
          public function getImg () {
              $conn = $this->getConnection();
-             $query = $conn->prepare("select * from users");
+             $query = $conn->prepare("select * from pictures");
              $query->setFetchMode(PDO::FETCH_ASSOC);
              $query->execute();
              $results = $query->fetchAll();
   //           $this->logger->logDebug(__FUNCTION__ . " " . print_r($results,1));
              return $results;
          }
-//        public function deleteComment ($id) {
-//            $conn = $this->getConnection();
-//            $query = $conn->prepare("DELETE FROM comments WHERE id = :id");
-//            $query->bindParam(':id', $id);
-//            $query->execute();
-//        }
  }
 ?>
