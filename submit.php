@@ -22,30 +22,50 @@
             <div id="gmap-content">
                 <div class="mySubmitBox glow-box">
 
+
+                  <form action="upload.php" method="POST" enctype="multipart/form-data">
+                    <div><input type="text" class="text_box" name="longitude" placeholder="longitude"></div>
+                    <div><input type="text" class="text_box" name="latitude" placeholder="latitude"></div>
+                    <textarea rows="4" cols="30" class="text_box" name="description" placeholder="description"></textarea>
+
+                    <!-- <div><a class="myPictureContainer"> -->
+                        <!-- <div class="tx"> -->
+                            <!-- browse to find a picture -->
+                            <!-- or drag and drop -->
+                        <!-- </div> -->
+                        <!-- </a></div> -->
+
+                    <div style="position: absolute; top: 75%;">
+                      <input type="file" name="file">
+                      <!-- <button type="submit" name="submit">UPLOAD IMAGE</button> -->
+                        <input type="submit" class="submit" value="upload" name="submit">
+                    </div>
+                  </form>
+
 <!--                    <div id="container" >-->
 <!--                        <div id="content">-->
-                            <form>
+                            <!-- <form> -->
 <!--                                <a class="loc_button glow_loc">location</a>-->
                                 <!--                        <span class="signInText">username</span>-->
-                                <div><input type="text" class="text_box" name="location" placeholder="location"></div>
+                                <!-- <div><input type="text" class="text_box" name="location" placeholder="location"></div> -->
                                 <!--                        <span class="signInText">description</span>-->
 <!--                                <a class="loc_button glow_loc">description</a>-->
 <!--                                <div><input type="textarea" class="text_box" name="description" placeholder="description"></div>-->
 
 <!--                                TODO make this resize automatically-->
-                                <textarea rows="4" cols="30" class="text_box" name="description" placeholder="description"></textarea>
+                                <!-- <textarea rows="4" cols="30" class="text_box" name="description" placeholder="description"></textarea> -->
 
-                                <div><a class="myPictureContainer">
-                                    <div class="tx">
-                                        browse to find a picture
-                                        or drag and drop
-                                    </div>
-                                    </a></div>
-
-                                <div style="position: absolute; top: 75%;">
-                                    <input type="submit" class="submit" value="Submit" href="browse.php">
-                                </div>
-                            </form>
+                                <!-- <div><a class="myPictureContainer"> -->
+                                    <!-- <div class="tx"> -->
+                                        <!-- browse to find a picture -->
+                                        <!-- or drag and drop -->
+                                    <!-- </div> -->
+                                    <!-- </a></div> -->
+<!--  -->
+                                <!-- <div style="position: absolute; top: 75%;"> -->
+                                    <!-- <input type="submit" class="submit" value="Submit" href="browse.php"> -->
+                                <!-- </div> -->
+                            <!-- </form> -->
 <!--                    <div class="submitPictureContainer">-->
 
 <!--                    </div>-->

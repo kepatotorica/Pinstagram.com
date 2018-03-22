@@ -1,3 +1,7 @@
+<?php
+require_once 'Dao.php';
+$userId = 1;
+?>
 <!--do the sessions and cookies stuff-->
 <head>
     <link rel="stylesheet" href="stylesheets/main.css">
@@ -28,14 +32,24 @@
     <div class="myBox glow-box">
         <ul>
 <!--#sql this is where I need to add the sql to get all picture names where the id matches the current user id  -->
-            <li><a href="#" class="loc_button glow_loc">Mexico</a></li><li><a href="#" class="loc_button glow_loc">Canada</a></li><li><a href="#" class="loc_button glow_loc">Spain</a></li>
-            <li><a href="#" class="loc_button glow_loc">France</a></li><li><a href="#" class="loc_button glow_loc">Japan</a></li><li><a href="#" class="loc_button glow_loc">Russia</a></li>
-            <li><a href="#" class="loc_button glow_loc">Mexico</a></li><li><a href="#" class="loc_button glow_loc">Canada</a></li><li><a href="#" class="loc_button glow_loc">Spain</a></li>
-            <li><a href="#" class="loc_button glow_loc">France</a></li><li><a href="#" class="loc_button glow_loc">Japan</a></li><li><a href="#" class="loc_button glow_loc">Russia</a></li>
-            <li><a href="#" class="loc_button glow_loc">Mexico</a></li><li><a href="#" class="loc_button glow_loc">Canada</a></li><li><a href="#" class="loc_button glow_loc">Spain</a></li>
-            <li><a href="#" class="loc_button glow_loc">France</a></li><li><a href="#" class="loc_button glow_loc">Japan</a></li><li><a href="#" class="loc_button glow_loc">Russia</a></li>
-            <li><a href="#" class="loc_button glow_loc">Mexico</a></li><li><a href="#" class="loc_button glow_loc">Canada</a></li><li><a href="#" class="loc_button glow_loc">Spain</a></li>
-            <li><a href="#" class="loc_button glow_loc">France</a></li><li><a href="#" class="loc_button glow_loc">Japan</a></li><li><a href="#" class="loc_button glow_loc">Russia</a></li>
+<?php
+  // echo '<li><a href="#" class="loc_button glow_loc">Mexico</a></li><li><a href="#" class="loc_button glow_loc">Canada</a></li><li><a href="#" class="loc_button glow_loc">Spain</a></li>';
+  echo ("<pre>" . print_r(getUserImgs($userId),1) . "</pre>");
+  $userImgs = $dao->getUserImgs($userId);
+  for( $i = 0; $i<count($userImgs); $i++ ) {
+      echo '<li><a href="#" class="loc_button glow_loc">'. $usersImgs[$i][pic_date]  .'</a></li>';
+    }
+    unset($i);
+?>
+
+            <!-- <li><a href="#" class="loc_button glow_loc">Mexico</a></li><li><a href="#" class="loc_button glow_loc">Canada</a></li><li><a href="#" class="loc_button glow_loc">Spain</a></li> -->
+            <!-- <li><a href="#" class="loc_button glow_loc">France</a></li><li><a href="#" class="loc_button glow_loc">Japan</a></li><li><a href="#" class="loc_button glow_loc">Russia</a></li> -->
+            <!-- <li><a href="#" class="loc_button glow_loc">Mexico</a></li><li><a href="#" class="loc_button glow_loc">Canada</a></li><li><a href="#" class="loc_button glow_loc">Spain</a></li> -->
+            <!-- <li><a href="#" class="loc_button glow_loc">France</a></li><li><a href="#" class="loc_button glow_loc">Japan</a></li><li><a href="#" class="loc_button glow_loc">Russia</a></li> -->
+            <!-- <li><a href="#" class="loc_button glow_loc">Mexico</a></li><li><a href="#" class="loc_button glow_loc">Canada</a></li><li><a href="#" class="loc_button glow_loc">Spain</a></li> -->
+            <!-- <li><a href="#" class="loc_button glow_loc">France</a></li><li><a href="#" class="loc_button glow_loc">Japan</a></li><li><a href="#" class="loc_button glow_loc">Russia</a></li> -->
+            <!-- <li><a href="#" class="loc_button glow_loc">Mexico</a></li><li><a href="#" class="loc_button glow_loc">Canada</a></li><li><a href="#" class="loc_button glow_loc">Spain</a></li> -->
+            <!-- <li><a href="#" class="loc_button glow_loc">France</a></li><li><a href="#" class="loc_button glow_loc">Japan</a></li><li><a href="#" class="loc_button glow_loc">Russia</a></li> -->
 
         </ul>
     </div>

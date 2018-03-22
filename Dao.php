@@ -1,25 +1,16 @@
 <?php
 // require_once 'KLogger.php';
  class Dao {
-     private $host = "us-cdbr-iron-east-05.cleardb.net";
-     private $db = "heroku_a3e918d71ac3a38";
-     private $user = "bad427961f820d";
-     private $pass = "75b5ec25";
+     private $host = "us-cdbr-iron-east-05.cleardb.net";//us-cdbr-iron-east-05.cleardb.net
+     private $db = "heroku_a3e918d71ac3a38";//heroku_a3e918d71ac3a38
+     private $user = "bad427961f820d";//bad427961f820d
+     private $pass = "75b5ec25";//75b5ec25
  //    protected $logger;
 
  //    public function __construct () {
  //        $this->logger = new KLogger('/Users/crk/projects/cs401/src/www', KLogger::DEBUG);
  //    }
  //
-    if(!mysql_connect($host, $user,  $pass))
-    {
-        exit('Error: could not establish database connection');
-    }
-    if(!mysql_select_db($db)
-       {
-           exit('Error: could not select the database');
-       }
-
         private function getConnection () {
             try {
                 $conn = new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user,$this->pass);
@@ -43,7 +34,7 @@
          $query->bindParam(':email', $email);
          $query->bindParam(':name', $name);
          $query->bindParam(':pass', $pass);
-         //           $this->logger->logDebug(__FUNCTION__ . " name=[{$name}] comment=[{$comment}]");
+//           $this->logger->logDebug(__FUNCTION__ . " name=[{$name}] comment=[{$comment}]");
          $query->execute();
      }
        public function getUsers () {
@@ -55,16 +46,30 @@
 //           $this->logger->logDebug(__FUNCTION__ . " " . print_r($results,1));
            return $results;
        }
-       public function saveImg () {
+       //#TODO finish making this method with files stored on heroku filesystem
+       public function saveImg ($id, $long, $lat, $filePath) {
            $conn = $this->getConnection();
-           $query = $conn->prepare("INSERT INTO pictures () VALUES ()");
-           // $query->bindParam(':email', $email);
+           $query = $conn->prepare("INSERT INTO pictures (pic_user_id, pic_long, pic_lat, filePath) VALUES (:id, :long, :lat, :filePath)");
+           $query->bindParam(':id', $id);
+           $query->bindParam(':long', $long);
+           $query->bindParam(':lat', $lat);
+           $query->bindParam(':filePath', $filePath);
            //           $this->logger->logDebug(__FUNCTION__ . " name=[{$name}] comment=[{$comment}]");
            $query->execute();
        }
-         public function getImg () {
+         public function getImgs () {
              $conn = $this->getConnection();
              $query = $conn->prepare("select * from pictures");
+             $query->setFetchMode(PDO::FETCH_ASSOC);
+             $query->execute();
+             $results = $query->fetchAll();
+  //           $this->logger->logDebug(__FUNCTION__ . " " . print_r($results,1));
+             return $results;
+         }
+         public function getUserImgs ($id) {
+             $conn = $this->getConnection();
+             $query = $conn->prepare("select * from pictures WHERE pic_user_id=:id");
+             $query->bindParam(':id', $id);
              $query->setFetchMode(PDO::FETCH_ASSOC);
              $query->execute();
              $results = $query->fetchAll();
