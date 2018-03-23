@@ -1,3 +1,5 @@
+<!--#TODO make it so that dreams just resets to current view being you, maybe call it homepage  -->
+
 <head>
     <link rel="stylesheet" href="stylesheets/main.css">
 </head>
@@ -8,7 +10,7 @@
 
 
     <div class="container">
-        <div><a href="user.php"class="button glow-button" >My pictures</a></div><div><a href="browse.php"  class="button glow-button">Browse</a></div><div><a href="dreams.php" class="button_current" disabled>dream trips</a></div><div><a href="signIn.php" class="button glow-button">sign in</a></div>
+        <div><a href="user.php"class="button glow-button" >My pictures</a></div><div><a href="browse.php"  class="button glow-button">Browse</a></div><div><a href="dreams.php" class="button_current" disabled>dream trips</a></div><div><a href="signIn.php" class="button glow-button">sign out</a></div>
     </div>
 
 

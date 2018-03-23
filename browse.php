@@ -1,5 +1,6 @@
 <!--sessions and cookies stuff-->
 <?php
+session_start();
 require_once 'Dao.php';
 $dao = new Dao();
 $dao->saveUser($_POST["email"],$_POST["username"],$_POST["password"]);
@@ -17,8 +18,19 @@ $name = $users[1]['user_name'];
 
 
     <div class="container">
-        <div><a href="user.php"class="button glow-button" >My pictures</a></div><div><a href="" class="button_current" disabled>Browse</a></div><div><a href="dreams.php" class="button glow-button">dream trips</a></div><div><a href="signIn.php" class="button glow-button">sign in</a>
-        </div>
+      <?php
+      $viewing = $_SESSION["currViewUser"];
+
+      if($viewing === $_SESSION["currUser"]){
+        echo '<div><a href="user.php" class="button glow-button">My pictures</a></div><div><a href="browse.php"  class="button_current" disabled>Browse</a></div><div><a href="dreams.php"  class="button glow-button">dream trips</a></div><div><a href="signIn.php" class="button glow-button">sign out</a></div>';
+      }else{
+        //if this isn't the person logged in
+        // echo '<div><a href="user.php" class="button glow-button">' . $_SESSION["currViewUser"] . '</a></div><div><a href="browse.php"  class="button_current" disabled>Browse</a></div><div><a href="dreams.php"  class="button glow-button">dream trips</a></div><div><a href="signIn.php" class="button glow-button">' . $_SESSION['currUser'] . '</a></div>';
+          echo '<div><a href="user.php" class="button glow-button">' . $_SESSION["currViewUser"] . '</a></div><div><a href="browse.php"  class="button_current" disabled>Browse</a></div><div><a href="dreams.php"  class="button glow-button">dream trips</a></div><div><a href="signIn.php" class="button glow-button">sign out</a></div>';
+      }
+      ?>
+        <!-- <div><a href="user.php"class="button glow-button" >My pictures</a></div><div><a href="" class="button_current" disabled>Browse</a></div><div><a href="dreams.php" class="button glow-button">dream trips</a></div><div><a href="signIn.php" class="button glow-button">sign out</a> -->
+        <!-- </div> -->
     </div>
 
     <body>
@@ -63,20 +75,16 @@ $name = $users[1]['user_name'];
       and have the separate header with browse lit up. It would be much esier to just make
       it pictures. I think that is what I will do-->
 <!--#sql                find and list all users by name, later try to implement a search function-->
+
+<form action="viewswitch.php" method="POST">
       <?php
           for( $i = 0; $i<count($users); $i++ ) {
-          echo '<li><a href="#" class="loc_button glow_loc">' . $users[$i]['user_name']  . '</a></li>';
+            echo '<li><input type="submit" class="loc_button glow_loc" value="' . $users[$i]['user_name'] . '" name="submit"></li>';
           }
           unset($i);
       ?>
-                <!-- <li><a href="#" class="loc_button glow_loc">Jen</a></li><li><a href="#" class="loc_button glow_loc">Tucker</a></li><li><a href="#" class="loc_button glow_loc">Randy</a></li>
-                <li><a href="#" class="loc_button glow_loc">Lanzo</a></li><li><a href="#" class="loc_button glow_loc">Prince Charming</a></li><li><a href="#" class="loc_button glow_loc">America</a></li>
-                <li><a href="#" class="loc_button glow_loc">Jen</a></li><li><a href="#" class="loc_button glow_loc">Tucker</a></li><li><a href="#" class="loc_button glow_loc">Randy</a></li>
-                <li><a href="#" class="loc_button glow_loc">Lanzo</a></li><li><a href="#" class="loc_button glow_loc">Prince Charming</a></li><li><a href="#" class="loc_button glow_loc">America</a></li>
-                <li><a href="#" class="loc_button glow_loc">Jen</a></li><li><a href="#" class="loc_button glow_loc">Tucker</a></li><li><a href="#" class="loc_button glow_loc">Randy</a></li>
-                <li><a href="#" class="loc_button glow_loc">Lanzo</a></li><li><a href="#" class="loc_button glow_loc">Prince Charming</a></li><li><a href="#" class="loc_button glow_loc">America</a></li>
-                <li><a href="#" class="loc_button glow_loc">Jen</a></li><li><a href="#" class="loc_button glow_loc">Tucker</a></li><li><a href="#" class="loc_button glow_loc">Randy</a></li>
-                <li><a href="#" class="loc_button glow_loc">Lanzo</a></li><li><a href="#" class="loc_button glow_loc">Prince Charming</a></li><li><a href="#" class="loc_button glow_loc">America</a></li> -->
+</form>
+                <!-- <li><a href="#" class="loc_button glow_loc">Jen</a></li><li><a href="#" class="loc_button glow_loc">Tucker</a></li><li><a href="#" class="loc_button glow_loc">Randy</a></li> -->
 
             </ul>
         </div>

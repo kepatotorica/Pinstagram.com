@@ -47,12 +47,14 @@
            return $results;
        }
        //#TODO finish making this method with files stored on heroku filesystem
-       public function saveImg ($id, $long, $lat, $filePath) {
+       public function saveImg ($title, $id, $long, $lat, $desc, $filePath) {
            $conn = $this->getConnection();
-           $query = $conn->prepare("INSERT INTO pictures (pic_user_id, pic_long, pic_lat, filePath) VALUES (:id, :long, :lat, :filePath)");
+           $query = $conn->prepare("INSERT INTO pictures (pic_title, pic_user_id, pic_long, pic_lat, pic_desc, filePath) VALUES (:title, :id, :long, :lat, :desc, :filePath)");
+           $query->bindParam(':title', $title);
            $query->bindParam(':id', $id);
            $query->bindParam(':long', $long);
            $query->bindParam(':lat', $lat);
+           $query->bindParam(':desc', $desc);
            $query->bindParam(':filePath', $filePath);
            //           $this->logger->logDebug(__FUNCTION__ . " name=[{$name}] comment=[{$comment}]");
            $query->execute();
@@ -70,6 +72,16 @@
              $conn = $this->getConnection();
              $query = $conn->prepare("select * from pictures WHERE pic_user_id=:id");
              $query->bindParam(':id', $id);
+             $query->setFetchMode(PDO::FETCH_ASSOC);
+             $query->execute();
+             $results = $query->fetchAll();
+  //           $this->logger->logDebug(__FUNCTION__ . " " . print_r($results,1));
+             return $results;
+         }
+         public function getUserId ($username) {
+             $conn = $this->getConnection();
+             $query = $conn->prepare("select * from users WHERE user_name=:username");
+             $query->bindParam(':username', $username);
              $query->setFetchMode(PDO::FETCH_ASSOC);
              $query->execute();
              $results = $query->fetchAll();

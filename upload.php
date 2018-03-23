@@ -10,6 +10,7 @@ if(isset($_POST['submit'])){
    $imgLat = $_POST['longitude'];
    $imgLong = $_POST['latitude'];
    $imgDesc = $_POST['description'];
+   $imgTitle = $_POST['title'];
   // $fileLat = $file['pic_lat'];
   // $fileLong = $file['pic_long'];
   // $filePath = $file['filePath'];
@@ -34,9 +35,9 @@ if(isset($_POST['submit'])){
           $fileNameNew = uniqid('',true).".".$fileActualExt;
           $fileDestination = 'uploads/'.$fileNameNew;
           move_uploaded_file($fileTmpName, $fileDestination);
-          $dao->saveImg($imgUser,$imgLong,$imgLat,$fileDestination);
+          $dao->saveImg($imgTitle,$imgUser,$imgLong,$imgLat,$imgDesc,$fileDestination);
 
-          header("Location: user.php?uploadsuccess" .".". $imgLat .".". $imgLong . ".".$imgDesc );
+          header("Location: user.php?uploadsuccess" .".". $imgTitle .".". $imgLat .".". $imgLong . ".".$imgDesc );
         }else{
           echo "your file upload was too large";
         }

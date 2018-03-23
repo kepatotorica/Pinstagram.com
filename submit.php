@@ -9,7 +9,7 @@
 
 
     <div class="container">
-        <div><a href="user.php"class="button glow-button" >My pictures</a></div><div><a href="browse.php"  class="button glow-button">Browse</a></div><div><a href="dreams.php" class="button glow-button">dream trips</a></div><div><a href="signIn.php" class="button glow-button">sign in</a></div>
+        <div><a href="user.php"class="button glow-button" >My pictures</a></div><div><a href="browse.php"  class="button glow-button">Browse</a></div><div><a href="dreams.php" class="button glow-button">dream trips</a></div><div><a href="signIn.php" class="button glow-button">sign out</a></div>
     </div>
 
 
@@ -24,6 +24,7 @@
 
 
                   <form action="upload.php" method="POST" enctype="multipart/form-data">
+                    <div><input type="text" class="text_box" name="title" placeholder="title"></div>
                     <div><input type="text" class="text_box" name="longitude" placeholder="longitude"></div>
                     <div><input type="text" class="text_box" name="latitude" placeholder="latitude"></div>
                     <textarea rows="4" cols="30" class="text_box" name="description" placeholder="description"></textarea>
