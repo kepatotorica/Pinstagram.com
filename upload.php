@@ -37,7 +37,10 @@ if(isset($_POST['submit'])){
           move_uploaded_file($fileTmpName, $fileDestination);
           $dao->saveImg($imgTitle,$imgUser,$imgLong,$imgLat,$imgDesc,$fileDestination);
 
-          header("Location: user.php?uploadsuccess" .".". $imgTitle .".". $imgLat .".". $imgLong . ".".$imgDesc );
+          echo 'location: '.$fileNameNew.'"<br>';
+
+          echo '<img src="'.$fileDestination.'" alt="'.$imgTitle.'" width="10%" height="10%">';
+          // header("Location: user.php?uploadsuccess" .".". $imgTitle .".". $imgLat .".". $imgLong . ".".$imgDesc );
         }else{
           echo "your file upload was too large";
         }

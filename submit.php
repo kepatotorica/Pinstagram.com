@@ -16,9 +16,9 @@
     <body>
 
         <div id="gmap">
-            <div id="gmap-draw">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d712.5140702062604!2d-116.20371165490606!3d43.615062451539146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sbd!4v1518382569657" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
-            </div>
+          <div id="gmap-draw">
+            <?php require_once 'map.php'; ?>
+          </div>
             <div id="gmap-content">
                 <div class="mySubmitBox glow-box">
 
@@ -83,12 +83,9 @@
 
 
 
-        <div class="spacedFooter">
-            <span>&copy Kepa Totorica</span>
-            <span>(208)599-5425</span>
-
-        </div>
-
+        <?php
+        require_once "footer.php";
+        ?>
 
 
     </body>

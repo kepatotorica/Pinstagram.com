@@ -17,12 +17,13 @@ $dao = new Dao();
 
 
     <div id="gmap" style="top:.5px">
-    <div id="gmap-draw">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d448.5920350631842!2d-116.203811!3d43.605593!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sbd!4v1518656799172" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+      <div id="gmap-draw">
+        <?php require_once 'map.php'; ?>
+      </div>
 
 
 
-    </div>
+    <!-- </div> -->
     <div id="gmap-content">
         <div class="signIn">
             <div id="container" >
@@ -31,7 +32,7 @@ $dao = new Dao();
                         <input type="text" placeholder="username" class="text_box" name="username"><br>
                         <input type="password" placeholder="password" class="text_box" name="password"><br>
                         <input type="submit" name="signin" class="submit" value="Sign In" action="browse.php" method="get">
-                        <input type="submit" name="register" class="submit" value="register" action="index.php">
+                        <input type="submit" name="register" class="submit" value="switch to: register" action="index.php">
                     </form>
                 </div>
             </div>
@@ -39,10 +40,8 @@ $dao = new Dao();
     </div>
 </div>
 
-    <div class="spacedFooter">
-        <span>&copy Kepa Totorica</span>
-        <span>(208)599-5425</span>
-
-    </div>
+<?php
+require_once "footer.php";
+?>
 
 </body>

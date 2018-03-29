@@ -78,6 +78,16 @@
   //           $this->logger->logDebug(__FUNCTION__ . " " . print_r($results,1));
              return $results;
          }
+         public function getImgFromId ($id) {
+            $conn = $this->getConnection();
+            $query = $conn->prepare("select * from pictures WHERE pic_id=:id");
+            $query->bindParam(':id', $id);
+            $query->setFetchMode(PDO::FETCH_ASSOC);
+            $query->execute();
+            $results = $query->fetchAll();
+ //           $this->logger->logDebug(__FUNCTION__ . " " . print_r($results,1));
+            return $results;
+        }
          public function getUserId ($username) {
              $conn = $this->getConnection();
              $query = $conn->prepare("select * from users WHERE user_name=:username");

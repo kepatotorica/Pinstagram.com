@@ -1,3 +1,36 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+    <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFHdhSSicB64ul8JDHCFZQkJeo1Na43hY&callback=initMap">
+    // src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQKJz82BbkGS6Mbg-M9EtS6lpZRm12iBI&callback=initMap">
+    </script>
+  </body>
+</html> -->
+
 
 <html>
     <head>
@@ -17,7 +50,7 @@
                 padding: 0;
             }
         </style>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQKJz82BbkGS6Mbg-M9EtS6lpZRm12iBI"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFHdhSSicB64ul8JDHCFZQkJeo1Na43hY"></script>
         <script>
             // This example creates a custom overlay called USGSOverlay, containing
             // a U.S. Geological Survey (USGS) image of the relevant area on the map.
@@ -29,8 +62,8 @@
             // Note that we set the prototype to an instance, rather than the
             // parent class itself, because we do not wish to modify the parent class.
 
-            var overlay;
-            USGSOverlay.prototype = new google.maps.OverlayView();
+            // var overlay;
+            // USGSOverlay.prototype = new google.maps.OverlayView();
 
             // Initialize the map and the custom overlay.
 
@@ -51,7 +84,7 @@
 
                 // The custom USGSOverlay object contains the USGS image,
                 // the bounds of the image, and a reference to the map.
-                overlay = new USGSOverlay(bounds, srcImage, map);
+                // overlay = new USGSOverlay(bounds, srcImage, map);
             }
 
             /** @constructor */
