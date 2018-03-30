@@ -1,12 +1,25 @@
 <!--#sessions and cookies stuff set here?-->
+<title>sign in</title>
 <?php
 session_start();
+require_once 'Dao.php';
+$dao = new Dao();
+
+
 $_SESSION["currUser"] = "";
 $_SESSION["currId"] = "";
 $_SESSION["currViewUser"] = "";
 $_SESSION["currViewId"] = "";
-require_once 'Dao.php';
-$dao = new Dao();
+
+//set the currently viewed picture to the first picture added
+$picture = $dao->getImgFromId(1);
+$_SESSION["currPic"] = 1;
+$_SESSION["currAddress"] = $picture[0]['pic_address'];
+$_SESSION["long"] = 0;
+$_SESSION["lat"] = 0;
+
+
+
 ?>
 <head>
     <link rel="stylesheet" href="stylesheets/main.css">
@@ -39,9 +52,7 @@ $dao = new Dao();
         </div>
     </div>
 </div>
-
+</body>
 <?php
 require_once "footer.php";
 ?>
-
-</body>

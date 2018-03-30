@@ -1,4 +1,4 @@
-
+<title>register</title>
 <head>
     <link rel="stylesheet" href="stylesheets/main.css">
 </head>
@@ -30,11 +30,7 @@
             </div>
         </div>
     </div>
-
-    <div class="spacedFooter">
-        <span>&copy Kepa Totorica</span>
-        <span>(208)599-5425</span>
-
-    </div>
-
 </body>
+<?php
+require_once "footer.php";
+?>

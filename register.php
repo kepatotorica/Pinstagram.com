@@ -63,3 +63,6 @@ echo '<br>printing ever users\' email<br>';
 
 </body>
 </html>
+<?php
+require_once "footer.php";
+?>

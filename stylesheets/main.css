@@ -341,16 +341,13 @@ input.text_box {
   /*    text-align: center;*/
 }
 
-input.text_box {}
-
 text.on_submit {
   color: white;
   background-color: black;
-  /*    padding-bottom: 1%;*/
-  /*    padding-top: 1%;*/
-  /*    padding-left: 15%;*/
-  /*    padding-right: 15%;*/
-  /*    padding-right: 150px;*/
+  padding-bottom: 1%;
+  padding-top: 1%;
+  padding-left: 1%;
+  padding-right: 1%;
   position: relative;
   margin-top: 5%;
   font-size: 23px;
@@ -365,13 +362,11 @@ text.on_submit {
 textarea.text_box {
   padding-bottom: 1%;
   padding-top: 1%;
-  padding-left: 15%;
-  padding-right: 15%;
+  padding-left: 1%;
+  padding-right: 1%;
   font-family: inherit;
   color: white;
   background-color: black;
-  /*    padding-bottom: 10px;*/
-  /*        padding-right: 150px;*/
   position: relative;
   margin-top: 5%;
   font-size: 23px;
@@ -379,11 +374,12 @@ textarea.text_box {
   border-radius: 10px;
   margin-left: 50%;
   transform: translate(-50%, 0%);
+  width: 95%;
   /*
     padding-left: 3;
     right: 3;
     */
-  text-align: center;
+  /* text-align: center; */
 }
 
 input.submit {

@@ -1,28 +1,31 @@
 <?php
+session_start();
+$imgUser = $_SESSION["currUser"];
+$imgUserId = $_SESSION["currId"];
+// echo $imgUser . '<br>';
 require_once 'Dao.php';
 $dao = new Dao();
 if(isset($_POST['submit'])){
 
-//#TODO make it so that the imgUser is based on who is currently logged into the session
-  $imgUser = 1;
   // $fileUser = $file['pic_user_id']; // should be based on session
    // $fileUser = $file['pic_user_id'];
-   $imgLat = $_POST['longitude'];
-   $imgLong = $_POST['latitude'];
+   $imgAdd = $_POST['address'];
    $imgDesc = $_POST['description'];
    $imgTitle = $_POST['title'];
+   // echo("<pre>".print_r($_POST,1)."</pre>");
   // $fileLat = $file['pic_lat'];
   // $fileLong = $file['pic_long'];
   // $filePath = $file['filePath'];
 
   $file = $_FILES['file'];
 
-  echo("<pre>" . print_r($file,1) . "</pre>");
+  // echo("<pre>" . print_r($file,1) . "</pre>");
   $fileName = $file['name'];
   $fileTmpName = $file['tmp_name'];
   $fileSize = $file['size'];
   $fileError = $file['error'];
   $fileType = $file['type'];
+  $error = "";
 
   $fileExt = explode('.',$fileName);
   $fileActualExt = strtolower(end($fileExt));
@@ -35,22 +38,28 @@ if(isset($_POST['submit'])){
           $fileNameNew = uniqid('',true).".".$fileActualExt;
           $fileDestination = 'uploads/'.$fileNameNew;
           move_uploaded_file($fileTmpName, $fileDestination);
-          $dao->saveImg($imgTitle,$imgUser,$imgLong,$imgLat,$imgDesc,$fileDestination);
+          $dao->saveImg($imgTitle,$imgUserId,$imgAdd,$imgDesc,$fileDestination);
 
           echo 'location: '.$fileNameNew.'"<br>';
 
           echo '<img src="'.$fileDestination.'" alt="'.$imgTitle.'" width="10%" height="10%">';
-          // header("Location: user.php?uploadsuccess" .".". $imgTitle .".". $imgLat .".". $imgLong . ".".$imgDesc );
+
+          header("Location: home.php?uploadsuccess" .".". $imgTitle .".". $imgAdd . ".".$imgDesc );
         }else{
-          echo "your file upload was too large";
+          $error = "your file upload was too large";
         }
       }else{
-        echo "there was an error uploading your file";
+        $error = "there was an error uploading your file";
       }
   }else{
-    echo "you can only upload files of extention .jpg, .jpeg, and .png'";
+    $error = "you can only upload files of extention .jpg, .jpeg, and .png";
   }
+echo $error;
+        echo '<form action="submit.php" method="POST">
+                  <br><input type="submit" value="go back" name="'.$error.'">;
+              </form>';
 
+              //#TODO figure out how to give error messages
   // $fileName = $file['pic_id'];
   // $fileUser = $file['pic_user_id'];
   // $fileLat = $file['pic_lat'];

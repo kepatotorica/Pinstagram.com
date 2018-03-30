@@ -47,13 +47,12 @@
            return $results;
        }
        //#TODO finish making this method with files stored on heroku filesystem
-       public function saveImg ($title, $id, $long, $lat, $desc, $filePath) {
+       public function saveImg ($title, $id, $add, $desc, $filePath) {
            $conn = $this->getConnection();
-           $query = $conn->prepare("INSERT INTO pictures (pic_title, pic_user_id, pic_long, pic_lat, pic_desc, filePath) VALUES (:title, :id, :long, :lat, :desc, :filePath)");
+           $query = $conn->prepare("INSERT INTO pictures (pic_title, pic_user_id, pic_address, pic_desc, filePath) VALUES (:title, :id, :add, :desc, :filePath)");
            $query->bindParam(':title', $title);
            $query->bindParam(':id', $id);
-           $query->bindParam(':long', $long);
-           $query->bindParam(':lat', $lat);
+           $query->bindParam(':add', $add);
            $query->bindParam(':desc', $desc);
            $query->bindParam(':filePath', $filePath);
            //           $this->logger->logDebug(__FUNCTION__ . " name=[{$name}] comment=[{$comment}]");

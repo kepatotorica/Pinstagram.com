@@ -1,4 +1,15 @@
 <!--#sessions and cookies stuff-->
+<?php
+session_start();
+require_once 'Dao.php';
+$dao = new Dao();
+$dao->saveUser($_POST["email"],$_POST["username"],$_POST["password"]);
+$users = $dao->getUsers();
+$id = $users[1]['user_id'];
+$email = $users[1]['user_email'];
+$name = $users[1]['user_name'];
+?>
+<title>add new picture</title>
 <head>
     <link rel="stylesheet" href="stylesheets/main.css">
 </head>
@@ -9,7 +20,14 @@
 
 
     <div class="container">
-        <div><a href="user.php"class="button glow-button" >My pictures</a></div><div><a href="browse.php"  class="button glow-button">Browse</a></div><div><a href="dreams.php" class="button glow-button">dream trips</a></div><div><a href="signIn.php" class="button glow-button">sign out</a></div>
+      <?php
+      $viewing = $_SESSION["currViewUser"];
+      if($viewing === ""){
+        $viewing = "last viewed";
+      }
+        echo '<div><a href="user.php"class="button glow-button" >' . $viewing .'</a></div><div><a href="browse.php"  class="button glow-button">Browse</a></div><div><a href="home.php" class="button glow-button">home</a></div><div><a href="signIn.php" class="button glow-button">sign out</a></div>';
+      ?>
+        <!-- <div><a href="user.php"class="button glow-button" >My pictures</a></div><div><a href="browse.php"  class="button glow-button">Browse</a></div><div><a href="home.php" class="button glow-button">home</a></div><div><a href="signIn.php" class="button glow-button">sign out</a></div> -->
     </div>
 
 
@@ -24,10 +42,10 @@
 
 
                   <form action="upload.php" method="POST" enctype="multipart/form-data">
-                    <div><input type="text" class="text_box" name="title" placeholder="title"></div>
-                    <div><input type="text" class="text_box" name="longitude" placeholder="longitude"></div>
-                    <div><input type="text" class="text_box" name="latitude" placeholder="latitude"></div>
-                    <textarea rows="4" cols="30" class="text_box" name="description" placeholder="description"></textarea>
+<!--key:  AIzaSyBFHdhSSicB64ul8JDHCFZQkJeo1Na43hY -->
+                    <div><input type="text" class="text_box" name="title" placeholder="title" onkeypress="return isNumberKey(event)" maxlength="20"></div>
+                    <input id="locationTextField" type="text" class="text_box" name="address" onkeypress="return isNumberKey(event)" maxlength="255">
+                    <textarea rows="4" cols="30" class="text_box" name="description" placeholder="description" onkeypress="return isNumberKey(event)" maxlength="255"></textarea>
 
                     <!-- <div><a class="myPictureContainer"> -->
                         <!-- <div class="tx"> -->
@@ -38,56 +56,26 @@
 
                     <div style="position: absolute; top: 75%;">
                       <input type="file" name="file">
-                      <!-- <button type="submit" name="submit">UPLOAD IMAGE</button> -->
                         <input type="submit" class="submit" value="upload" name="submit">
                     </div>
                   </form>
-
-<!--                    <div id="container" >-->
-<!--                        <div id="content">-->
-                            <!-- <form> -->
-<!--                                <a class="loc_button glow_loc">location</a>-->
-                                <!--                        <span class="signInText">username</span>-->
-                                <!-- <div><input type="text" class="text_box" name="location" placeholder="location"></div> -->
-                                <!--                        <span class="signInText">description</span>-->
-<!--                                <a class="loc_button glow_loc">description</a>-->
-<!--                                <div><input type="textarea" class="text_box" name="description" placeholder="description"></div>-->
-
-<!--                                TODO make this resize automatically-->
-                                <!-- <textarea rows="4" cols="30" class="text_box" name="description" placeholder="description"></textarea> -->
-
-                                <!-- <div><a class="myPictureContainer"> -->
-                                    <!-- <div class="tx"> -->
-                                        <!-- browse to find a picture -->
-                                        <!-- or drag and drop -->
-                                    <!-- </div> -->
-                                    <!-- </a></div> -->
-<!--  -->
-                                <!-- <div style="position: absolute; top: 75%;"> -->
-                                    <!-- <input type="submit" class="submit" value="Submit" href="browse.php"> -->
-                                <!-- </div> -->
-                            <!-- </form> -->
-<!--                    <div class="submitPictureContainer">-->
-
-<!--                    </div>-->
-
-<!--                        </div>-->
-<!--                    </div>-->
-
-
-
-
                 </div>
             </div>
         </div>
+    </body>
+    </html>
+</body>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFHdhSSicB64ul8JDHCFZQkJeo1Na43hY&libraries=places"></script>
+<script>
+    function init() {
+        var input = document.getElementById('locationTextField');
+        var autocomplete = new google.maps.places.Autocomplete(input);
+    }
 
+    google.maps.event.addDomListener(window, 'load', init);
+</script>
 
 
         <?php
         require_once "footer.php";
         ?>
-
-
-    </body>
-    </html>
-</body>

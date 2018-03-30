@@ -10,5 +10,5 @@ echo $nameVal . " is the name <br>";
 $_SESSION["currViewUser"] = $nameVal;
 $user = $dao->getUserId($nameVal);
 $_SESSION["currViewId"] = $user[0]['user_id'];
-  header("Location: user.php?viewing:" .".". $nameVal.".". $_SESSION["currViewId"] );
+header("Location: user.php?viewing:" .".". $nameVal.".". $_SESSION["currViewId"] );
  ?>

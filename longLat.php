@@ -28,8 +28,8 @@ if($_SESSION["currAddress"] === ""){
             function initMap() {
               geocoder = new google.maps.Geocoder();
               map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 20,
-                    // center: {lat: 62.323907, lng: -150.109291},
+                    zoom: 15,
+                    center: {lat: 62.323907, lng: -150.109291},
                     mapTypeId: 'satellite',
 
                 });
@@ -44,13 +44,12 @@ if($_SESSION["currAddress"] === ""){
               geocoder.geocode( { 'address': address}, function(results, status) {
                 if (status == 'OK') {
                   map.setCenter(results[0].geometry.location);
-                  // var marker = new google.maps.Marker({
-                  //     map: map,
-                  //     position: results[0].geometry.location
-                  // });
+                  var marker = new google.maps.Marker({
+                      map: map,
+                      position: results[0].geometry.location
+                  });
                 } else {
-                  // alert('Geocode was not successful for the following reason: ' + status);
-                  codeAddress("mount everest");
+                  alert('Geocode was not successful for the following reason: ' + status);
                 }
               });
             }
