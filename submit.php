@@ -2,6 +2,7 @@
 <?php
 session_start();
 require_once 'Dao.php';
+require_once 'sessionCheck.php';
 $dao = new Dao();
 $dao->saveUser($_POST["email"],$_POST["username"],$_POST["password"]);
 $users = $dao->getUsers();
@@ -43,9 +44,9 @@ $name = $users[1]['user_name'];
 
                   <form action="upload.php" method="POST" enctype="multipart/form-data">
 <!--key:  AIzaSyBFHdhSSicB64ul8JDHCFZQkJeo1Na43hY -->
-                    <div><input type="text" class="text_box" name="title" placeholder="title" onkeypress="return isNumberKey(event)" maxlength="20"></div>
-                    <input id="locationTextField" type="text" class="text_box" name="address" onkeypress="return isNumberKey(event)" maxlength="255">
-                    <textarea rows="4" cols="30" class="text_box" name="description" placeholder="description" onkeypress="return isNumberKey(event)" maxlength="255"></textarea>
+                    <div><input type="text" class="text_box" name="title" placeholder="title" onkeypress="return isNumberKey(event)" maxlength="100" required="required"></div>
+                    <input id="locationTextField" type="text" class="text_box" name="address" onkeypress="return isNumberKey(event)" maxlength="255" required="required">
+                    <textarea rows="4" cols="30" class="text_box" name="description" placeholder="description" onkeypress="return isNumberKey(event)" maxlength="255" required="required"></textarea>
 
                     <!-- <div><a class="myPictureContainer"> -->
                         <!-- <div class="tx"> -->
@@ -54,10 +55,9 @@ $name = $users[1]['user_name'];
                         <!-- </div> -->
                         <!-- </a></div> -->
 
-                    <div style="position: absolute; top: 75%;">
-                      <input type="file" name="file">
+                    <input type="file" name="file" id="file" class="inputfile" required="required"/>
+                    <label for="file">drag or drop a file, or click to browse</label>
                         <input type="submit" class="submit" value="upload" name="submit">
-                    </div>
                   </form>
                 </div>
             </div>

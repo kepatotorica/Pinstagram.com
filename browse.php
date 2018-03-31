@@ -2,6 +2,7 @@
 <?php
 session_start();
 require_once 'Dao.php';
+require_once 'sessionCheck.php';
 $dao = new Dao();
 $dao->saveUser($_POST["email"],$_POST["username"],$_POST["password"]);
 $users = $dao->getUsers();

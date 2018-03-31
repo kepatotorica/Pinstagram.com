@@ -1,6 +1,7 @@
 <!--#TODO make it so that dre a ms just resets to current view being you, maybe call it homepage  -->
 <?php
 session_start();
+require_once 'sessionCheck.php';
 require_once 'Dao.php';
 $dao = new Dao();
 $userId = 1;//left it here just incase

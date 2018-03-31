@@ -493,3 +493,41 @@ button.submitbutton {
 .tx {
   color: white;
 }
+
+/*#file syling  */
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	/* position: absolute; */
+	z-index: -1;
+}
+
+.inputfile + label {
+    width: 95%;
+    height: 25%;
+    padding-left: 1%;
+    border-color:  rgba(255, 255, 255, .5);
+    border-style: solid;
+    /* padding-right: 25%; */
+    margin-top: 5%;
+    /* padding-bottom: 20%; */
+    /* this is where I left off */
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
+    text-align: center;
+    /* transform: translate(-50%, 100%); */
+}
+
+.inputfile:focus + label{
+  background: rgba(255, 0, 0, .5);
+  box-shadow: 0px 0px 10px 2px rgb(255, 255, 255);
+}
+.inputfile + label:hover {
+  background: rgba(0, 0, 255, .5);
+  box-shadow: 0px 0px 10px 2px rgb(255, 255, 255);
+}

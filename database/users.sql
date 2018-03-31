@@ -17,7 +17,7 @@ INSERT INTO users (user_email, user_name, user_pass)
 
 CREATE TABLE pictures (
     pic_id     INT(8) NOT NULL AUTO_INCREMENT,
-    pic_title   VARCHAR(255) NOT NULL,
+    pic_title   VARCHAR(100) NOT NULL,
     pic_user_id   VARCHAR(255) NOT NULL,
     pic_date   DATETIME  DEFAULT CURRENT_TIMESTAMP,
     pic_address   VARCHAR(255) NOT NULL,

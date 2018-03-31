@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once 'Dao.php';
+require_once 'sessionCheck.php';
 $dao = new Dao();
 $userId = 1;//left it here just incase
 ?>

@@ -46,6 +46,26 @@
 //           $this->logger->logDebug(__FUNCTION__ . " " . print_r($results,1));
            return $results;
        }
+       public function usedName ($username) {
+         $conn = $this->getConnection();
+         $query = $conn->prepare("select user_name from users WHERE user_name=:username");
+         $query->bindParam(':username', $username);
+         $query->setFetchMode(PDO::FETCH_ASSOC);
+         $query->execute();
+         $results = $query->fetchAll();
+//           $this->logger->logDebug(__FUNCTION__ . " " . print_r($results,1));
+         return $results;
+       }
+       public function usedEmail ($email) {
+         $conn = $this->getConnection();
+         $query = $conn->prepare("select user_email from users WHERE user_email=:email");
+         $query->bindParam(':email', $email);
+         $query->setFetchMode(PDO::FETCH_ASSOC);
+         $query->execute();
+         $results = $query->fetchAll();
+//           $this->logger->logDebug(__FUNCTION__ . " " . print_r($results,1));
+         return $results;
+       }
        //#TODO finish making this method with files stored on heroku filesystem
        public function saveImg ($title, $id, $add, $desc, $filePath) {
            $conn = $this->getConnection();
