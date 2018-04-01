@@ -2,7 +2,7 @@
 selected picture -->
 <?php
 session_start();
-require_once 'Dao.php';
+include_once 'Dao.php';
 $dao = new Dao();
 if(isset($_POST)){
   foreach($_POST as $key=>$each){

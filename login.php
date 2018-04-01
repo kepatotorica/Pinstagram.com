@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'Dao.php';
+include_once 'Dao.php';
 $dao = new Dao();
 $users = $dao->getUsers();
 // echo("<pre>" . print_r($users,1) . "</pre>");

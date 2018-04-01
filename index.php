@@ -16,9 +16,26 @@
                     <div id="content">
 <!--                        <form>-->
                         <form name="form" action="/register.php" method="POST">
-<!--                            <form name="frm" action="/user.php" method="POST">-->
-<!--#sql           allow a user to sign in so check with sql to see if a entry exists with user and password the same-->
-<!--                            also renavigate-->
+                          <?php
+                          if($_GET['error'] != ""){
+                            echo '<div id="error">';
+                            if($_GET['error'] == 0){
+                              echo 'email and username already in use';
+                            }else if($_GET['error'] == 1){
+                              echo 'username already in use';
+                            }else if($_GET['error'] == 2){
+                              echo 'email already in use';
+                            }
+                            echo '</div>';
+                          }
+                          ?>
+                            <script>
+                            t = setTimeout(function(){removeElement("error") }, 2000);
+                            function removeElement(elementId) {
+                              var element = document.getElementById(elementId);
+                              element.parentNode.removeChild(element);
+                            }
+                            </script>
                             <input type="text" placeholder="username" class="text_box" name="username" required="required"><br>
                             <input type="email" placeholder="email" class="text_box" name="email" required="required"><br>
                             <input type="password" placeholder="password" class="text_box" name="password" required="required"><br>

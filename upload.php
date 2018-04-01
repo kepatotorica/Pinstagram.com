@@ -3,7 +3,7 @@ session_start();
 $imgUser = $_SESSION["currUser"];
 $imgUserId = $_SESSION["currId"];
 // echo $imgUser . '<br>';
-require_once 'Dao.php';
+include_once 'Dao.php';
 $dao = new Dao();
 if(isset($_POST['submit'])){
 
@@ -36,6 +36,7 @@ if(isset($_POST['submit'])){
       if($fileError === 0){
         if($fileSize < 3939841*3){
           $fileNameNew = uniqid('',true).".".$fileActualExt;
+          $folder = int intdiv(count($dao->));//this is probably really slow, maybe make a table that counts pictures?
           $fileDestination = 'uploads/'.$fileNameNew;
           move_uploaded_file($fileTmpName, $fileDestination);
           $dao->saveImg($imgTitle,$imgUserId,$imgAdd,$imgDesc,$fileDestination);

@@ -531,3 +531,21 @@ button.submitbutton {
   background: rgba(0, 0, 255, .5);
   box-shadow: 0px 0px 10px 2px rgb(255, 255, 255);
 }
+
+#error{
+  position: relative;
+  left:50%;
+  /* top: 8%; */
+  color: black;
+  z-index: 1000;
+  transform: translate(-50%, 0%);
+  /* border-top-width: 10px; */
+  font-size: 100%;
+  width: 37%;
+  background-color: rgba(255,0,0,.5);
+  padding: 1% 1% 1% 1%;
+  border-color: red;
+  border-radius: 10px;
+  border-style: dashed;
+
+}

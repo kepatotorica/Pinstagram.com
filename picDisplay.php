@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'Dao.php';
+include_once 'Dao.php';
 $dao = new Dao();
 //this makes it so that we can see our picture update, I should be able to remove this in the future with javascript hopefully
 $id = $_SESSION["currPic"];

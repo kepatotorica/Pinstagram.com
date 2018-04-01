@@ -2,7 +2,7 @@
 <?php
 session_start();
 require_once 'sessionCheck.php';
-require_once 'Dao.php';
+include_once 'Dao.php';
 $dao = new Dao();
 $userId = 1;//left it here just incase
 ?>
