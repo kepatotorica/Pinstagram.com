@@ -36,8 +36,21 @@ if(isset($_POST['submit'])){
       if($fileError === 0){
         if($fileSize < 3939841*3){
           $fileNameNew = uniqid('',true).".".$fileActualExt;
-          $folder = int intdiv(count($dao->));//this is probably really slow, maybe make a table that counts pictures?
-          $fileDestination = 'uploads/'.$fileNameNew;
+          $numImgs = count($dao->getImgs());
+          // $folder = round(count($dao->getImgs()) / 1000));//this is probably really slow, maybe make a table that counts pictures?
+          $val = round($numImgs/100);
+          echo $val;
+          if(is_dir("uploads")){
+            echo "<br>true<br>";
+          }else{
+            mkdir("uploads", 0777);
+          }
+          if(is_dir("uploads/$val")){
+            echo "<br>true<br>";
+          }else{
+            mkdir("uploads/$val", 0777);
+          }
+          $fileDestination = 'uploads/'.$val.'/'.$fileNameNew;
           move_uploaded_file($fileTmpName, $fileDestination);
           $dao->saveImg($imgTitle,$imgUserId,$imgAdd,$imgDesc,$fileDestination);
 

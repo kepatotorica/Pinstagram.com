@@ -7,7 +7,14 @@
 
     <div id="gmap" style="top:.5px">
         <div id="gmap-draw">
-          <?php require_once 'map.php'; ?>
+          <?php
+          require_once 'map.php';
+          if(is_dir("uploads")){
+            echo "<br>true<br>";
+          }else{
+            mkdir("uploads", 0777);
+          }
+          ?>
         </div>
         <div id="gmap-content">
             <div class="signIn">
