@@ -4,11 +4,11 @@ include_once 'Dao.php';
 $dao = new Dao();
 $users = $dao->getUsers();
 // echo("<pre>" . print_r($users,1) . "</pre>");
-echo 'last person added<br>';
-echo("<pre>" . print_r($users[count($users) - 1],1) . "</pre>");
+// echo 'last person added<br>';
+// echo("<pre>" . print_r($users[count($users) - 1],1) . "</pre>");
 
-echo 'what was in post<br>';
-echo("<pre>" . print_r($_POST,1) . "</pre>");
+// echo 'what was in post<br>';
+// echo("<pre>" . print_r($_POST,1) . "</pre>");
 
 if(isset($_POST['register'])){
   header("Location: index.php?newuser");
@@ -36,7 +36,7 @@ if(isset($_POST['signin'])){
        }
   }
   if($found === false){
-    header("Location: signIn.php?userValid=0");
+    header("Location: signIn.php?userValid=1");
   }
   unset($i);
 

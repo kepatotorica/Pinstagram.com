@@ -48,8 +48,9 @@ $_SESSION["lat"] = 0;
                     <form action="login.php" method="POST">
 
                       <?php
-                        if($_GET['userValid'] == 0){
+                        if($_GET['userValid'] == 1){
                           echo '<div id="error">invalid username or password</div>';
+                          // echo '<div id="error">'.$_GET['userValid'].'</div>';
                         }
                       ?>
                         <script>
