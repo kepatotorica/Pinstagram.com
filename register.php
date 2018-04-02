@@ -23,17 +23,18 @@ if(isset($_POST['signIn'])){
   $lowercase = preg_match('@[a-z]@', $_POST["password"]);
   $number    = preg_match('@[0-9]@', $_POST["password"]);
 
-  if(!$uppercase || !$lowercase || !$number || strlen($password) < 8) {
+  if(!$uppercase || !$lowercase || !$number || strlen($_POST["password"]) < 8) {
     $passVaild = 0;
   }
 
-  if($emailUsed != "" && $nameUsed != "" && $passVaild == 0){
+  // echo $passVaild ."<br>";
+  if($emailUsed != "" && $nameUsed != "" && $passVaild === 0){
     header("Location: index.php?error=3");
-  }else if($emailUsed != "" && $passVaild == 0){
+  }else if($emailUsed != "" && $passVaild === 0){
     header("Location: index.php?error=4");
-  }else if($nameUsed != "" && $passVaild == 0){
+  }else if($nameUsed != "" && $passVaild === 0){
     header("Location: index.php?error=5");
-  }else if($passVaild == 0){
+  }else if($passVaild === 0){
     header("Location: index.php?error=6");
   }else if($emailUsed != "" && $nameUsed != ""){
     echo "<br>both used<br>";
