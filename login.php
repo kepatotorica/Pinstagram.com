@@ -14,7 +14,7 @@ if(isset($_POST['register'])){
   header("Location: index.php?newuser");
 }
 
-if(isset($_POST['signin'])){
+if(isset($_POST['signIn'])){
   $found = false;
   $username = $_POST['username'];
   $password = $_POST['password'];
@@ -49,6 +49,6 @@ if(isset($_POST['signin'])){
 
 // header("Location: user.php?cookie");
 ?>
-<form name="form" action="/signin.php" method="POST">
+<form name="form" action="/signIn.php" method="POST">
     <input type="submit" class="submit" value="back to sign in">
 </form>

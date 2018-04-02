@@ -62,7 +62,7 @@ $_SESSION["lat"] = 0;
                         </script>
                         <input type="text" placeholder="username" class="text_box" name="username" required="required"><br>
                         <input type="password" placeholder="password" class="text_box" name="password" required="required"><br>
-                        <input type="submit" name="signin" class="submit" value="Sign In" action="browse.php" method="get">
+                        <input type="submit" name="signIn" class="submit" value="Sign In" action="browse.php" method="get">
                     </form>
                     <form action="index.php" method="POST">
                         <input type="submit" name="register" class="submit" value="switch to: register">

@@ -3,8 +3,8 @@ session_start();
 include_once 'Dao.php';
 $dao = new Dao();
 
-if(isset($_POST['signin'])){
-  header("Location: signin.php");
+if(isset($_POST['signIn'])){
+  header("Location: signIn.php");
 }else {
 // echo $_POST["username"];
   $nameUsedA = $dao->usedName($_POST["username"]);
