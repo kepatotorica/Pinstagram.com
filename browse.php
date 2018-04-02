@@ -46,7 +46,7 @@ $name = $users[1]['user_name'];
       it pictures. I think that is what I will do-->
 <!--#sql                find and list all users by name, later try to implement a search function-->
 
-<form action="viewswitch.php" method="POST">
+<form action="viewSwitch.php" method="POST">
       <?php
           for( $i = 0; $i<count($users); $i++ ) {
             if($users[$i]['user_id'] !== $_SESSION["currId"]){

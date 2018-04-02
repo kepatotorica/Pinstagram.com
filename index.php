@@ -10,7 +10,7 @@
           <?php
           require_once 'map.php';
           if(is_dir("uploads")){
-            echo "<br>true<br>";
+            // echo "<br>true<br>";
           }else{
             mkdir("uploads", 0777);
           }
