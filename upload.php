@@ -12,6 +12,9 @@ if(isset($_POST['submit'])){
    $imgAdd = $_POST['address'];
    $imgDesc = $_POST['description'];
    $imgTitle = $_POST['title'];
+   $_SESSION["enterAddress"] = $_POST['address'];
+   $_SESSION["enterDesc"] = $_POST['description'];
+   $_SESSION["enterTitle"] = $_POST['title'];
    // echo("<pre>".print_r($_POST,1)."</pre>");
   // $fileLat = $file['pic_lat'];
   // $fileLong = $file['pic_long'];
@@ -41,7 +44,7 @@ if(isset($_POST['submit'])){
           $val = round($numImgs/100);
           echo $val;
           if(is_dir("uploads")){
-            echo "<br>true<br>";
+            // echo "<br>true<br>";
           }else{
             mkdir("uploads", 0777);
           }
@@ -53,6 +56,10 @@ if(isset($_POST['submit'])){
           $fileDestination = 'uploads/'.$val.'/'.$fileNameNew;
           move_uploaded_file($fileTmpName, $fileDestination);
           $dao->saveImg($imgTitle,$imgUserId,$imgAdd,$imgDesc,$fileDestination);
+          $_SESSION["enterAddress"] ="";
+          $_SESSION["enterDesc"] ="";
+          $_SESSION["enterTitle"] ="";
+
 
           echo 'location: '.$fileNameNew.'"<br>';
 

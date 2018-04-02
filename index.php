@@ -37,6 +37,14 @@ $_SESSION["currPic"] = 1;
                               echo 'username already in use';
                             }else if($_GET['error'] == 2){
                               echo 'email already in use';
+                            }else if($_GET['error'] == 3){
+                              echo 'email and username in use, password invalid';
+                            }else if($_GET['error'] == 4){
+                              echo 'email in use, password invalid';
+                            }else if($_GET['error'] == 5){
+                              echo 'username in use, password invalid';
+                            }else if($_GET['error'] == 6){
+                              echo 'password invalid';
                             }
                             echo '</div>';
                           }
@@ -48,10 +56,12 @@ $_SESSION["currPic"] = 1;
                               element.parentNode.removeChild(element);
                             }
                             </script>
-                            <input type="text" placeholder="username" class="text_box" name="username" required="required"><br>
-                            <input type="email" placeholder="email" class="text_box" name="email" required="required"><br>
-                            <input type="password" placeholder="password" class="text_box" name="password" required="required"><br>
-                            <input type="submit" class="submit" value="Register">
+                            <?php
+                            echo '<input type="text" placeholder="username" class="text_box" name="username" required="required" value="'.$_SESSION["enterUser"].'"><br>'.
+                            '<input type="email" placeholder="email" class="text_box" name="email" required="required" value="'.$_SESSION["enterEmail"].'"><br>'.
+                            '<input type="password" placeholder="password" class="text_box" name="password" required="required" title="password must have atleast 8 characters, 1 number, one Uppercase and one Lowecase letter" value="'.$_SESSION["enterPassword"].'"><br>'.
+                            '<input type="submit" class="submit" value="Register">';
+                            ?>
                         </form>
                         <form name="form" action="/register.php" method="POST">
                             <input type="submit" name="signIn" class="submit" value="switch to: Sign In" action="signIn.php">

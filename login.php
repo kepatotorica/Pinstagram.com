@@ -18,6 +18,8 @@ if(isset($_POST['signIn'])){
   $found = false;
   $username = $_POST['username'];
   $password = $_POST['password'];
+  $_SESSION["enterUser"] = $_POST['username'];
+  $_SESSION["enterPass"] = $_POST['password'];
   for( $i = 0; $i<count($users); $i++ ) {
     echo "user at $i is ";
        if($users[$i]['user_name'] === $username){
@@ -28,6 +30,8 @@ if(isset($_POST['signIn'])){
            $_SESSION["currId"] = $users[$i]['user_id'];
            $_SESSION["currViewUser"] = $username;
            $_SESSION["currViewId"] = $users[$i]['user_id'];
+           $_SESSION["enterUser"] = "";
+           $_SESSION["enterPass"] = "";
            $found = true;
            header("Location: user.php?cookie".".".$_SESSION["currUser"].".".$_SESSION["currUserId"]);
          }
