@@ -44,9 +44,9 @@ $name = $users[1]['user_name'];
 
                   <form action="upload.php" method="POST" enctype="multipart/form-data">
 <!--key:  AIzaSyBFHdhSSicB64ul8JDHCFZQkJeo1Na43hY -->
-                    <div><input type="text" class="text_box" name="title" placeholder="title" onkeypress="return isNumberKey(event)" maxlength="100" required="required"></div>
-                    <input id="locationTextField" type="text" class="text_box" name="address" onkeypress="return isNumberKey(event)" maxlength="255" required="required">
-                    <textarea rows="4" cols="30" class="text_box" name="description" placeholder="description" onkeypress="return isNumberKey(event)" maxlength="255" required="required"></textarea>
+                    <div><input type="text" class="text_box" name="title" placeholder="title" onkeypress="return isNumberKey(event)" maxlength="100" required="required" title="max length of 100 characters"></div>
+                    <input id="locationTextField" type="text" class="text_box" name="address" onkeypress="return isNumberKey(event)" maxlength="255" required="required" title="max length of 255 characters">
+                    <textarea rows="4" cols="30" class="text_box" name="description" placeholder="description" onkeypress="return isNumberKey(event)" maxlength="255" required="required" title="max length of 255 characters"></textarea>
 
                     <!-- <div><a class="myPictureContainer"> -->
                         <!-- <div class="tx"> -->
