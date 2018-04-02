@@ -1,3 +1,8 @@
+<?php
+session_start();
+$_SESSION["currPic"] = 1;
+?>
+
 <title>register</title>
 <head>
     <link rel="stylesheet" href="stylesheets/main.css">

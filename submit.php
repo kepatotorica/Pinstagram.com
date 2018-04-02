@@ -26,7 +26,7 @@ $name = $users[1]['user_name'];
       if($viewing === ""){
         $viewing = "last viewed";
       }
-        echo '<div><a href="user.php"class="button glow-button" >' . $viewing .'</a></div><div><a href="browse.php"  class="button glow-button">Browse</a></div><div><a href="home.php" class="button glow-button">home</a></div><div><a href="signIn.php" class="button glow-button">sign out</a></div>';
+        echo '<div><a href="user.php"class="button glow-button"title="user that you are currently viewing" >' . $viewing .'</a></div><div><a href="browse.php"  class="button glow-button">Browse</a></div><div><a href="home.php" class="button glow-button">home</a></div><div><a href="signIn.php" class="button glow-button">sign out</a></div>';
       ?>
         <!-- <div><a href="user.php"class="button glow-button" >My pictures</a></div><div><a href="browse.php"  class="button glow-button">Browse</a></div><div><a href="home.php" class="button glow-button">home</a></div><div><a href="signIn.php" class="button glow-button">sign out</a></div> -->
     </div>
