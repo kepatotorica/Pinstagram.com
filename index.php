@@ -49,7 +49,7 @@
                             <input type="submit" class="submit" value="Register">
                         </form>
                         <form name="form" action="/register.php" method="POST">
-                            <input type="submit" name="signIn" class="submit" value="switch too: Sign In" action="signIn.php">
+                            <input type="submit" name="signIn" class="submit" value="switch to: Sign In" action="signIn.php">
                         </form>
                     </div>
                 </div>
