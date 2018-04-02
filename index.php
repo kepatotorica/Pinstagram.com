@@ -32,25 +32,25 @@ $_SESSION["currPic"] = 1;
                           if($_GET['error'] != ""){
                             echo '<div id="error">';
                             if($_GET['error'] == 0){
-                              echo 'email and username already in use';
+                              echo 'email and username invalid';
                             }else if($_GET['error'] == 1){
-                              echo 'username already in use';
+                              echo 'invalid username';
                             }else if($_GET['error'] == 2){
-                              echo 'email already in use';
+                              echo 'invalid email';
                             }else if($_GET['error'] == 3){
-                              echo 'email and username in use, password invalid';
+                              echo ' invalid email, username and password';
                             }else if($_GET['error'] == 4){
-                              echo 'email in use, password invalid';
+                              echo 'invalid email and password';
                             }else if($_GET['error'] == 5){
-                              echo 'username in use, password invalid';
+                              echo 'invalid username and password';
                             }else if($_GET['error'] == 6){
-                              echo 'password invalid';
+                              echo 'invalid password';
                             }
                             echo '</div>';
                           }
                           ?>
                             <script>
-                            t = setTimeout(function(){removeElement("error") }, 2000);
+                            t = setTimeout(function(){removeElement("error") }, 4000);
                             function removeElement(elementId) {
                               var element = document.getElementById(elementId);
                               element.parentNode.removeChild(element);

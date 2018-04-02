@@ -15,6 +15,11 @@ if(isset($_POST['signIn'])){
   $emailUsedA = $dao->usedEmail($_POST["email"]);
   $nameUsed = $nameUsedA[0]["user_name"];
   $emailUsed = $emailUsedA[0]["user_email"];
+
+  $email = $_POST["email"];
+  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $emailUsed = "Invalid email format";
+  }
   echo "<br>".$emailUsed."<br>".$nameUsed."<br>";
 
   $passVaild = 1;
