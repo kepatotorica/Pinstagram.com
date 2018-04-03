@@ -13,7 +13,10 @@ if(isset($_POST['submit'])){
    $imgDesc = $_POST['description'];
    $imgTitle = $_POST['title'];
    $_SESSION["enterAddress"] = $_POST['address'];
+
    $_SESSION["enterDesc"] = $_POST['description'];
+   echo  $_POST['description']."<br>";
+   echo $_SESSION["enterDesc"]."<br>";
    $_SESSION["enterTitle"] = $_POST['title'];
    // echo("<pre>".print_r($_POST,1)."</pre>");
   // $fileLat = $file['pic_lat'];
