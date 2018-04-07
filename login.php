@@ -24,7 +24,7 @@ if(isset($_POST['signIn'])){
     echo "user at $i is ";
        if($users[$i]['user_name'] === $username){
          echo 'found<br>';
-         if($users[$i]['user_pass'] === $password){
+         if($users[$i]['user_pass'] === md5(md5($_POST["username"]."#46525235$&!^%(")."asdfpi67980115".$_POST["password"])){
            echo "successful login $username <br>";
            $_SESSION["currUser"] = $username;
            $_SESSION["currId"] = $users[$i]['user_id'];

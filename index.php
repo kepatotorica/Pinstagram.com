@@ -4,6 +4,7 @@ $_SESSION["currPic"] = 1;
 ?>
 
 <title>register</title>
+<link rel="icon" href="/images/favicon.ico">
 <head>
     <link rel="stylesheet" href="stylesheets/main.css">
 </head>

@@ -51,7 +51,7 @@ if(isset($_POST['signIn'])){
     echo "<br>email used<br>";
     header("Location: index.php?error=2");
   }else{
-    $dao->saveUser($_POST["email"],$_POST["username"],$_POST["password"]);
+    $dao->saveUser($_POST["email"],$_POST["username"],md5(md5($_POST["username"]."#46525235$&!^%(")."asdfpi67980115".$_POST["password"]));
     $_SESSION["enterUser"] = "";
     $_SESSION["enterEmail"] = "";
     $_SESSION["enterPassword"] = "";

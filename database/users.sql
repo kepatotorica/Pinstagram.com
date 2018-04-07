@@ -13,7 +13,7 @@ CREATE TABLE users (
 );
 
 INSERT INTO users (user_email, user_name, user_pass)
-    VALUES('kepa@kepa.kepa', 'kepa', 'kepa');
+    VALUES('kepa@kepa.kepa', 'kepa', 'f64275e8eb3c18a89db9185a97c4e655');
 
 CREATE TABLE pictures (
     pic_id     INT(8) NOT NULL AUTO_INCREMENT,
