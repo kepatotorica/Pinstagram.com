@@ -9,7 +9,33 @@ $userId = 1;//left it here just incase
 
 <title>home</title>
 <head>
+  <link rel="icon" href="/images/favicon.ico">
     <link rel="stylesheet" href="stylesheets/main.css">
+    <script>
+    function showUser(str,addy) {
+      var el = document.getElementById('txtHint');
+      el.innerHTML = '<div>' + str + '</div>';
+        if (str == "") {
+            return;
+        } else {
+            if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                // code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("txtHint").innerHTML = this.responseText;
+                }
+            };
+            xmlhttp.open("GET","picDisplay.php?q="+str,true);
+            xmlhttp.send();
+            codeAddress(addy);
+        }
+    }
+    </script>
 </head>
 
 <body class="body">
@@ -41,12 +67,16 @@ $userId = 1;//left it here just incase
         <!-- HTML -->
         <div class="myBox glow-box">
             <ul>
-              <form action="pictureSwitcher.php" method="POST">
+
+              <form>
+              </form>
+
+              <form>
                     <?php
                         $userId = $_SESSION["currId"];
                         $userImgs = $dao->getUserImgs($userId);
                         for( $i = 0; $i<count($userImgs); $i++ ) {
-                          echo '<li><input type="submit" class="loc_button glow_loc" value="' .  $userImgs[$i]['pic_title'] . '" name="'. $userImgs[$i]['pic_id'].'"></li>';
+                          echo '<li><input type="button" class="loc_button glow_loc" value="' .  $userImgs[$i]['pic_title'] . '" name="'. $userImgs[$i]['pic_id'].'"title="'. $userImgs[$i]['pic_address'].'" onclick="showUser(this.name,this.title)">';
                         }
                         unset($i);
                     ?>
@@ -60,7 +90,8 @@ $userId = 1;//left it here just incase
     </body>
     </html>
 </body>
+    <span id="txtHint"></span>
 <?php
 require_once "footer.php";
-require_once "picDisplay.php";
+// require_once "picDisplay.php";
 ?>

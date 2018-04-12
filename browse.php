@@ -11,6 +11,7 @@ $email = $users[1]['user_email'];
 $name = $users[1]['user_name'];
 ?>
 <head>
+  <link rel="icon" href="/images/favicon.ico">
     <link rel="stylesheet" href="stylesheets/main.css">
 </head>
 

@@ -26,6 +26,7 @@ $_SESSION["lat"] = 0;
 
 ?>
 <head>
+  <link rel="icon" href="/images/favicon.ico">
     <link rel="stylesheet" href="stylesheets/main.css">
 </head>
 
