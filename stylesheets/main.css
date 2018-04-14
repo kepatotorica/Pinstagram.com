@@ -17,8 +17,10 @@
   font-weight: normal;
   text-transform: uppercase;
   transition: all 0.2s ease-in-out;
-  position: relative;
+  position: fixed;
   z-index: 1000;
+  top: 0%;
+ transform: translate(-50%,0%);
 }
 
 .button_current {
@@ -32,9 +34,11 @@
   text-transform: uppercase;
   transition: all 0.2s ease-in-out;
   box-shadow: 0 5px 15px rgba(0, 0, 0, .4);
-  position: relative;
+  position: fixed;
   z-index: 1000;
+  top:-1%;
   cursor: default;
+  transform: translate(-50%,0%);
 }
 
 .glow-button:hover {
@@ -49,7 +53,7 @@
 
 .glow-button:active {
   background-color: darkorange;
-  padding: 0px 0px;
+  /* padding: 0px 0px; */
 }
 
 .container>div {
@@ -159,6 +163,7 @@
   transition: all 0.2s ease-in-out;
   box-shadow: 0px 0px 10px 2px rgb(255, 255, 255);
   right: 5%;
+  bottom: 5%;
 }
 
 .submit {
@@ -188,9 +193,9 @@ li {
 
 #map {
   height: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
-  bottom: -200px;
+  /* bottom: -200px; */
   left: 0;
   right: 0;
   z-index: 0;
