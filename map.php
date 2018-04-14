@@ -57,7 +57,7 @@ if($_SESSION["currAddress"] === ""){
                   var gLat = location.lat() - prevLat;
                   var interLat = lat;
                   var interLng = lng;
-                  var steps = 1000;
+                  var steps = 10000;
 
                   var dLat = gLat / steps;
                   var dLng = gLng / steps;
@@ -69,6 +69,7 @@ if($_SESSION["currAddress"] === ""){
                   for (var i=0; i < steps; i++) {
                       // prevLat += dLat;
                       // prevLong += dLng;
+                      //for some reason this isn't actually makeing it pan
                         setTimeout(map.panTo(new google.maps.LatLng(prevLat + dLat*i,prevLng + dLng*i)),1000);
                   //     console.log(map.getCenter().lat());
                   //     // map.panTo(new google.maps.LatLng(prevLat + i*dLat,prevLong + i*dLng));
