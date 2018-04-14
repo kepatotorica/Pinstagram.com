@@ -66,7 +66,7 @@ $userId = 1;//left it here just incase
 
         <!-- HTML -->
         <div class="myBox glow-box">
-            <ul>
+            <!-- <ul> -->
 
               <form>
               </form>
@@ -76,12 +76,12 @@ $userId = 1;//left it here just incase
                         $userId = $_SESSION["currId"];
                         $userImgs = $dao->getUserImgs($userId);
                         for( $i = 0; $i<count($userImgs); $i++ ) {
-                          echo '<li><input type="button" class="loc_button glow_loc" value="' .  $userImgs[$i]['pic_title'] . '" name="'. $userImgs[$i]['pic_id'].'"title="'. $userImgs[$i]['pic_address'].'" onclick="showUser(this.name,this.title)">';
+                          echo '<input type="button" class="loc_button glow_loc" value="' .  $userImgs[$i]['pic_title'] . '" name="'. $userImgs[$i]['pic_id'].'"title="'. $userImgs[$i]['pic_address'].'" onclick="showUser(this.name,this.title)"><br>';
                         }
                         unset($i);
                     ?>
               </form>
-            </ul>
+            <!-- </ul> -->
         </div>
 
         <div class="submit">

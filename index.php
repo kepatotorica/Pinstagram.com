@@ -57,13 +57,33 @@ $_SESSION["currPic"] = 1;
                               element.parentNode.removeChild(element);
                             }
                             </script>
+                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
                             <?php
-                            echo '<input type="text" placeholder="username" class="text_box" name="username" required="required" value="'.$_SESSION["enterUser"].'"><br>'.
-                            '<input type="email" placeholder="email" class="text_box" name="email" required="required" value="'.$_SESSION["enterEmail"].'"><br>'.
-                            '<input type="password" placeholder="password" class="text_box" name="password" required="required" title="password must have atleast 8 characters, 1 number, one Uppercase and one Lowecase letter" value="'.$_SESSION["enterPassword"].'"><br>'.
-                            '<input type="submit" class="submit" value="Register">';
+                            echo '<input type="text" placeholder="username" id="username" class="text_box" name="username" required="required" value="'.$_SESSION["enterUser"].'">'.
+                            '<input type="email" placeholder="email" id="email" class="text_box" name="email" required="required" value="'.$_SESSION["enterEmail"].'">'.
+                            '<input type="password" placeholder="password"  id="password" class="text_box" name="password" required="required" title="password must have atleast 8 characters, 1 number, one Uppercase and one Lowecase letter" value="'.$_SESSION["enterPassword"].'">'.
+                              '<input type="password" placeholder="confirm password" name="confirm_password" id="confirm_password" class="text_box" name="passwordAgain" required="required" title="password must have atleast 8 characters, 1 number, one Uppercase and one Lowecase letter" value="'.$_SESSION["enterConfirmPassword"].'">'.
+                            '<input type="submit" id="register" class="submit" value="Register">';
                             ?>
                         </form>
+
+                        <script>
+                        $('#confirm_password').on('keyup', function () {
+                          if ($('#password').val() == $('#confirm_password').val()) {
+                            $('#confirm_password').css('background-color', 'green');
+                            $('#register').removeAttr("disabled");
+                          } else{
+                            if($('#confirm_password').val != ""){
+                              $('#confirm_password').css('background-color', 'red');
+                            }
+                            $('#register').attr("disabled","disabled");
+                        }
+                          // $('#password').css('background-color', 'red');
+                        });
+                      </script>
+
+                          <!-- <span id='message'>asdgasdgasdgasdgasdf</span> -->
                         <form name="form" action="/register.php" method="POST">
                             <input type="submit" name="signIn" class="submit" value="switch to: Sign In" action="signIn.php">
                         </form>

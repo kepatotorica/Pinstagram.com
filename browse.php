@@ -39,7 +39,7 @@ $name = $users[1]['user_name'];
     <body>
 
         <div class="myBox glow-box">
-            <ul>
+            <!-- <ul> -->
 <!--#TODO make it by image not by user, or maybe both. I am not sure
       we could show browse as lit if you click a user only if session id user !match
       the name you click on then it could just propogate the mypictures page
@@ -51,7 +51,7 @@ $name = $users[1]['user_name'];
       <?php
           for( $i = 0; $i<count($users); $i++ ) {
             if($users[$i]['user_id'] !== $_SESSION["currId"]){
-            echo '<li><input type="submit" class="loc_button glow_loc" value="' . $users[$i]['user_name'] . '" name="submit"></li>';
+            echo '<input type="submit" class="loc_button glow_loc" value="' . $users[$i]['user_name'] . '" name="submit"><br>';
           }
           }
           unset($i);
@@ -59,7 +59,7 @@ $name = $users[1]['user_name'];
 </form>
                 <!-- <li><a href="#" class="loc_button glow_loc">Jen</a></li><li><a href="#" class="loc_button glow_loc">Tucker</a></li><li><a href="#" class="loc_button glow_loc">Randy</a></li> -->
 
-            </ul>
+            <!-- </ul> -->
         </div>
         <div class="submit">
             <a href="submit.php" class="submit_button glow_submit">add a picture</a>

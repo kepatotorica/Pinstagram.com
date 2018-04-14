@@ -10,6 +10,7 @@ if(isset($_POST['signIn'])){
   $_SESSION["enterUser"] = $_POST["username"];
   $_SESSION["enterEmail"] = $_POST["email"];
   $_SESSION["enterPassword"] = $_POST["password"];
+  $_SESSION["enterConfirmPassword"] = $_POST["confirm_password"];
 
   $nameUsedA = $dao->usedName($_POST["username"]);
   $emailUsedA = $dao->usedEmail($_POST["email"]);
@@ -28,7 +29,7 @@ if(isset($_POST['signIn'])){
   $lowercase = preg_match('@[a-z]@', $_POST["password"]);
   $number    = preg_match('@[0-9]@', $_POST["password"]);
 
-  if(!$uppercase || !$lowercase || !$number || strlen($_POST["password"]) < 8) {
+  if(!$uppercase || !$lowercase || !$number || strlen($_POST["password"]) < 8 || $_SESSION["enterPassword"] != $_SESSION["enterConfirmPassword"]) {
     $passVaild = 0;
   }
 
@@ -40,6 +41,8 @@ if(isset($_POST['signIn'])){
   }else if($nameUsed != "" && $passVaild === 0){
     header("Location: index.php?error=5");
   }else if($passVaild === 0){
+    echo $_SESSION["enterPassword"] . '<br>';
+    echo $_SESSION["enterConfirmPassword"] . '<br>';
     header("Location: index.php?error=6");
   }else if($emailUsed != "" && $nameUsed != ""){
     echo "<br>both used<br>";
@@ -55,6 +58,7 @@ if(isset($_POST['signIn'])){
     $_SESSION["enterUser"] = "";
     $_SESSION["enterEmail"] = "";
     $_SESSION["enterPassword"] = "";
+    $_SESSION["enterConfirmPassword"] = "";
     $users = $dao->getUsers();
     echo 'printing the most recently created user\'s information<br>';
     echo("<pre>" . print_r($users[count($users) - 1],1) . "</pre>");
