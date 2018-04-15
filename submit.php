@@ -28,7 +28,7 @@ $name = $users[1]['user_name'];
       if($viewing === ""){
         $viewing = "last viewed";
       }
-        echo '<div><a href="user.php"class="button glow-button" title="user that you are currently viewing">' . $viewing .'</a></div><div><a href="browse.php"  class="button glow-button">Browse</a></div><div><a href="home.php" class="button glow-button">home</a></div><div><a href="signIn.php" class="button glow-button">sign out</a></div>';
+        echo '<div><a href="user.php"class="button glow-button" title="user that you are currently viewing">' . htmlspecialchars($viewing) .'</a></div><div><a href="browse.php"  class="button glow-button">Browse</a></div><div><a href="home.php" class="button glow-button">home</a></div><div><a href="signIn.php" class="button glow-button">sign out</a></div>';
       ?>
         <!-- <div><a href="user.php"class="button glow-button" >My pictures</a></div><div><a href="browse.php"  class="button glow-button">Browse</a></div><div><a href="home.php" class="button glow-button">home</a></div><div><a href="signIn.php" class="button glow-button">sign out</a></div> -->
     </div>
@@ -86,9 +86,9 @@ $name = $users[1]['user_name'];
               <?php
                     echo '
                     <label for="title"></label>
-                    <div><input type="text" class="text_box" name="title" placeholder="title" onkeypress="return isNumberKey(event)" maxlength="100" required="required" title="max length of 100 characters" value="'.$_SESSION["enterTitle"].'"></div>
-                          <input id="locationTextField" type="text" class="text_box" name="address" onkeypress="return isNumberKey(event)" maxlength="255" required="required" title="max length of 255 characters" value="'.$_SESSION["enterAddress"].'">
-                          <textarea rows="4" cols="30" class="text_box" name="description" placeholder="description" onkeypress="return isNumberKey(event)" maxlength="255" required="required" title="max length of 255 characters" value="'.$_SESSION["enterDesc"] .'">'.$_SESSION["enterDesc"].'</textarea>';
+                    <div><input type="text" class="text_box" name="title" placeholder="title" onkeypress="return isNumberKey(event)" maxlength="100" required="required" title="max length of 100 characters" value="'.htmlspecialchars($_SESSION["enterTitle"]).'"></div>
+                          <input id="locationTextField" type="text" class="text_box" name="address" onkeypress="return isNumberKey(event)" maxlength="255" required="required" title="max length of 255 characters" value="'.htmlspecialchars($_SESSION["enterAddress"]).'">
+                          <textarea rows="4" cols="30" class="text_box" name="description" placeholder="description" onkeypress="return isNumberKey(event)" maxlength="255" required="required" title="max length of 255 characters" value="'.htmlspecialchars($_SESSION["enterDesc"]) .'">'.htmlspecialchars($_SESSION["enterDesc"]).'</textarea>';
               ?>
                     <!-- <div><a class="myPictureContainer"> -->
                         <!-- <div class="tx"> -->

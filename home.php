@@ -51,7 +51,7 @@ $userId = 1;//left it here just incase
         $viewing = "last viewed";
       }
         //if this isn't the person logged in
-        echo '<div><a href="user.php"class="button glow-button" title="user that you are currently viewing">' . $viewing .'</a></div><div><a href="browse.php"  class="button glow-button">Browse</a></div><div><a href="home.php" class="button_current" disabled>home</a></div><div><a href="signIn.php" class="button glow-button">sign out</a></div>';
+        echo '<div><a href="user.php"class="button glow-button" title="user that you are currently viewing">' . htmlspecialchars($viewing) .'</a></div><div><a href="browse.php"  class="button glow-button">Browse</a></div><div><a href="home.php" class="button_current" disabled>home</a></div><div><a href="signIn.php" class="button glow-button">sign out</a></div>';
         // echo '<div><a href="user.php" class="button_current" disabled>' . $_SESSION["currViewUser"] . '</a></div><div><a href="browse.php"  class="button glow-button">Browse</a></div><div><a href="home.php"  class="button glow-button">home</a></div><div><a href="signIn.php" class="button glow-button">' . $_SESSION['currUser'] . '</a></div>';
       ?>
 
@@ -77,7 +77,7 @@ $userId = 1;//left it here just incase
                         $userId = $_SESSION["currId"];
                         $userImgs = $dao->getUserImgs($userId);
                         for( $i = 0; $i<count($userImgs); $i++ ) {
-                          echo '<input type="button" class="loc_button glow_loc" value="' .  $userImgs[$i]['pic_title'] . '" name="'. $userImgs[$i]['pic_id'].'"title="'. $userImgs[$i]['pic_address'].'" onclick="showUser(this.name,this.title)"><br>';
+                          echo '<input type="button" class="loc_button glow_loc" value="' .  htmlspecialchars($userImgs[$i]['pic_title']) . '" name="'. htmlspecialchars($userImgs[$i]['pic_id']) .'"title="'. htmlspecialchars($userImgs[$i]['pic_address']) .'" onclick="showUser(this.name,this.title)"><br>';
                         }
                         unset($i);
                     ?>

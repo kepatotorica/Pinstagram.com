@@ -4,7 +4,7 @@ $address = $_SESSION["currAddress"];
 if($_SESSION["currAddress"] === ""){
   $address = "Sydney, NSW";
 }else{
-  $address = $_SESSION["currAddress"];
+  $address = htmlspecialchars($_SESSION["currAddress"]);
 }
 ?>
 <html>
@@ -101,7 +101,7 @@ if($_SESSION["currAddress"] === ""){
                   // });
                   prevLat = lat;
                   prevLng = lng;
-                  map.setCenter(new google.maps.LatLng(prevLat,prevLng));
+                  map.panTo(new google.maps.LatLng(prevLat,prevLng));
                   console.log("prev= " + prevLat);
                   console.log("goal= " + lat);
                   console.log("prev= " + prevLng);

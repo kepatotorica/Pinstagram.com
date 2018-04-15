@@ -2,7 +2,6 @@
 session_start();
 $imgUser = $_SESSION["currUser"];
 $imgUserId = $_SESSION["currId"];
-// echo $imgUser . '<br>';
 include_once 'Dao.php';
 $dao = new Dao();
 if(isset($_POST['submit'])){
@@ -15,10 +14,9 @@ if(isset($_POST['submit'])){
    $_SESSION["enterAddress"] = $_POST['address'];
 
    $_SESSION["enterDesc"] = $_POST['description'];
-   echo  $_POST['description']."<br>";
-   echo $_SESSION["enterDesc"]."<br>";
+   echo  htmlspecialchars($_POST['description'])."<br>";
+   echo htmlspecialchars($_SESSION["enterDesc"])."<br>";
    $_SESSION["enterTitle"] = $_POST['title'];
-   // echo("<pre>".print_r($_POST,1)."</pre>");
   // $fileLat = $file['pic_lat'];
   // $fileLong = $file['pic_long'];
   // $filePath = $file['filePath'];
@@ -46,7 +44,7 @@ if(isset($_POST['submit'])){
           $numImgs = count($dao->getImgs());
           // $folder = round(count($dao->getImgs()) / 1000));//this is probably really slow, maybe make a table that counts pictures?
           $val = round($numImgs/100);
-          echo $val;
+          echo htmlspecialchars($val);
           if(is_dir("uploads")){
             // echo "<br>true<br>";
           }else{
@@ -65,9 +63,9 @@ if(isset($_POST['submit'])){
           $_SESSION["enterTitle"] ="";
 
 
-          echo 'location: '.$fileNameNew.'"<br>';
+          echo 'location: '.htmlspecialchars($fileNameNew).'"<br>';
 
-          echo '<img src="'.$fileDestination.'" alt="'.$imgTitle.'" width="10%" height="10%">';
+          echo '<img src="'.htmlspecialchars($fileDestination).'" alt="'.htmlspecialchars($imgTitle).'" width="10%" height="10%">';
 
           header("Location: home.php?uploadsuccess" .".". $imgTitle .".". $imgAdd . ".".$imgDesc );
         }else{
@@ -84,7 +82,7 @@ if(isset($_POST['submit'])){
   }
 echo $error;
         echo '<form action="submit.php" method="POST">
-                  <br><input type="submit" value="go back" name="'.$error.'">;
+                  <br><input type="submit" value="go back" name="'.htmlspecialchars($error).'">;
               </form>';
 
               //#TODO figure out how to give error messages

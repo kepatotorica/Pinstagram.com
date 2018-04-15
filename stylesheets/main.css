@@ -468,34 +468,6 @@ button.submitbutton {
   transition: all 0.2s ease-in-out;
 }
 
-/*
-.myPictureBox {
-    border-radius: 25px;
-    padding: 5px;
-    font: 24px/36px sans-serif;
-    width: 40%;
-    height: 40%!important;
-    background: rgba(255,255,255,.1);
-    color: rgba(10,10,10,.8);
-    position: relative;
-    z-index: 10;
-    transition: all 0.2s ease-in-out;
-}
-*/
-
-/*
-.submitPictureContainer
-{
-    background: rgba(255,255,255,.5);
-    margin:2%;
-    width:30%;
-    padding-top:30%;
-    float: left;
-    position:absolute;
-    top: 0px;
-    border-radius: 20px;
-}
-*/
 
 .myPictureContainer {
   top: 35%;
@@ -569,6 +541,7 @@ button.submitbutton {
   border-color: black;
   border-radius: 10px;
   border-style: groove;
+    font-family: 'Ubuntu', sans-serif;
 
 }
 #help{
@@ -587,6 +560,8 @@ button.submitbutton {
   padding: 1% 1% 1% 1%;
   border-color: black ;
   border-radius: 10px;
+    z-index: 1000;
+      font-family: 'Ubuntu', sans-serif;
 
 }
 
@@ -601,10 +576,31 @@ button.submitbutton {
   /* border-top-width: 10px; */
   font-size: 100%;
   /* width: 37%; */
-  background-color: rgba(140,140,140,1);
-  padding: 1% 1% 1% 1%;
+  background-color: rgba(100,100,100,1);
+  padding: 1% 1.3% 1% 1.3%;
   border-color: black ;
-  border-radius: 10px;
+  border-radius: 50px;
+    font-family: 'Ubuntu', sans-serif;
   /* border-style: dashed; */
+
+}
+
+#helpButton:hover{
+  color: white;
+  background-color: black;
+    font-family: 'Ubuntu', sans-serif;
+    border-radius: 10px;
+    color: black;
+    background-color: white;
+  transition: all 0.2s ease-in-out;
+
+}
+
+
+#helpButton:active{
+  color: white;
+  background-color: black;
+    font-family: 'Ubuntu', sans-serif;
+  /* transition: all 0.2s ease-in-out; */
 
 }

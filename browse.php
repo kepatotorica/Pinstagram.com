@@ -26,7 +26,7 @@ $name = $users[1]['user_name'];
       if($viewing === ""){
         $viewing = "last viewed";
       }
-          echo '<div><a href="user.php" class="button glow-button title="user that you are currently viewing"">' . $_SESSION["currViewUser"] . '</a></div><div><a href="browse.php"  class="button_current" disabled>Browse</a></div><div><a href="home.php"  class="button glow-button">home</a></div><div><a href="signIn.php" class="button glow-button">sign out</a></div>';
+          echo '<div><a href="user.php" class="button glow-button title="user that you are currently viewing"">' . htmlspecialchars($_SESSION["currViewUser"]) . '</a></div><div><a href="browse.php"  class="button_current" disabled>Browse</a></div><div><a href="home.php"  class="button glow-button">home</a></div><div><a href="signIn.php" class="button glow-button">sign out</a></div>';
       ?>
 
     </div>
@@ -52,7 +52,7 @@ $name = $users[1]['user_name'];
       <?php
           for( $i = 0; $i<count($users); $i++ ) {
             if($users[$i]['user_id'] !== $_SESSION["currId"]){
-            echo '<input type="submit" class="loc_button glow_loc" value="' . $users[$i]['user_name'] . '" name="submit"><br>';
+            echo '<input type="submit" class="loc_button glow_loc" value="' . htmlspecialchars($users[$i]['user_name']) . '" name="submit"><br>';
           }
           }
           unset($i);

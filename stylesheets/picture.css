@@ -22,6 +22,7 @@ div.gallery {
   z-index: 1000;
   background: rgba(10, 10, 10, .3);
   transform: translate(-50%, -50%);
+    font-family: 'Ubuntu', sans-serif;
   /* transition: all 0.3s ease-in-out; */
 }
 
@@ -33,6 +34,7 @@ div.gallery:hover {
   width: 20%;
   /*    position: relative;*/
   color: rgba(255, 255, 255, .1);
+    font-family: 'Ubuntu', sans-serif;
   /* transition: all 0.4s ease-in-out; */
 }
 
@@ -50,6 +52,7 @@ div.gallery:hover>img {
   border-radius: 10px;
   opacity: 1;
   filter: alpha(opacity=100);
+    font-family: 'Ubuntu', sans-serif;
 }
 
 div.gallery:active>img {
@@ -58,11 +61,13 @@ div.gallery:active>img {
   border-radius: 10px;
   opacity: 1;
   filter: alpha(opacity=100);
+    font-family: 'Ubuntu', sans-serif;
 }
 
 div.gallery:active>div.desc {
   transition: all .2s ease-in-out;
   display: none;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 /* div.gallery:hover {
@@ -75,6 +80,7 @@ div.gallery img {
   opacity: 0.6;
   filter: alpha(opacity=50);
   transition: all 0.2s ease-in-out;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 div.desc {
@@ -84,4 +90,5 @@ div.desc {
   color: rgba(255, 255, 255, .5);
   transition: all .2s ease-in-out;
   display: none;
+    font-family: 'Ubuntu', sans-serif;
 }

@@ -25,7 +25,7 @@ if(isset($_POST['signIn'])){
        if($users[$i]['user_name'] === $username){
          echo 'found<br>';
          if($users[$i]['user_pass'] === md5(md5($_POST["username"]."#46525235$&!^%(")."asdfpi67980115".$_POST["password"])){
-           echo "successful login $username <br>";
+           echo 'successful login '. htmlspecialchars($username) . '<br>';
            $_SESSION["currUser"] = $username;
            $_SESSION["currId"] = $users[$i]['user_id'];
            $_SESSION["currViewUser"] = $username;
@@ -33,7 +33,7 @@ if(isset($_POST['signIn'])){
            $_SESSION["enterUser"] = "";
            $_SESSION["enterPass"] = "";
            $found = true;
-           header("Location: user.php?cookie".".".$_SESSION["currUser"].".".$_SESSION["currUserId"]);
+           header("Location: user.php?cookie".".".htmlspecialchars($_SESSION["currUser"]).".".htmlspecialchars($_SESSION["currUserId"]));
          }
        }else{
          echo 'not found<br>';

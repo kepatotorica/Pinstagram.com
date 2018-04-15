@@ -64,8 +64,8 @@ $_SESSION["lat"] = 0;
                         </script>
                         <?php
                         echo
-                        '<input type="text" placeholder="username" class="text_box" name="username" required="required" value="'.$_SESSION["enterUser"].'"><br>
-                        <input type="password" placeholder="password" class="text_box" name="password" required="required"  value="'.$_SESSION["enterPass"].'"><br>
+                        '<input type="text" placeholder="username" class="text_box" name="username" required="required" value="'.htmlspecialchars($_SESSION["enterUser"]).'"><br>
+                        <input type="password" placeholder="password" class="text_box" name="password" required="required"  value="'.htmlspecialchars($_SESSION["enterPass"]).'"><br>
                         <input type="submit" name="signIn" class="submit" value="Sign In" action="browse.php" method="get">';
                         ?>
                     </form>

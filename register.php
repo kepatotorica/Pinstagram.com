@@ -41,8 +41,6 @@ if(isset($_POST['signIn'])){
   }else if($nameUsed != "" && $passVaild === 0){
     header("Location: index.php?error=5");
   }else if($passVaild === 0){
-    echo $_SESSION["enterPassword"] . '<br>';
-    echo $_SESSION["enterConfirmPassword"] . '<br>';
     header("Location: index.php?error=6");
   }else if($emailUsed != "" && $nameUsed != ""){
     echo "<br>both used<br>";
@@ -60,8 +58,6 @@ if(isset($_POST['signIn'])){
     $_SESSION["enterPassword"] = "";
     $_SESSION["enterConfirmPassword"] = "";
     $users = $dao->getUsers();
-    echo 'printing the most recently created user\'s information<br>';
-    echo("<pre>" . print_r($users[count($users) - 1],1) . "</pre>");
     $username = $_POST['username'];
     $password = $_POST['password'];
     $_SESSION["currUser"] = $users[count($users) - 1]['user_name'];
