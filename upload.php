@@ -40,7 +40,8 @@ if(isset($_POST['submit'])){
 
   if(in_array($fileActualExt, $allowed)){
       if($fileError === 0){
-        if($fileSize < 3939841*3){
+        // if($fileSize < 3939841*3){
+        if($fileSize < 393941*3){
           $fileNameNew = uniqid('',true).".".$fileActualExt;
           $numImgs = count($dao->getImgs());
           // $folder = round(count($dao->getImgs()) / 1000));//this is probably really slow, maybe make a table that counts pictures?
@@ -71,12 +72,15 @@ if(isset($_POST['submit'])){
           header("Location: home.php?uploadsuccess" .".". $imgTitle .".". $imgAdd . ".".$imgDesc );
         }else{
           $error = "your file upload was too large";
+          header("Location: submit.php?error=".$error);
         }
       }else{
         $error = "there was an error uploading your file";
+        header("Location: submit.php?error=".$error);
       }
   }else{
     $error = "you can only upload files of extention .jpg, .jpeg, and .png";
+    header("Location: submit.php?error=".$error);
   }
 echo $error;
         echo '<form action="submit.php" method="POST">

@@ -35,25 +35,25 @@ $_SESSION["currPic"] = 1;
 <!-- <div id="flexHolder"> -->
                         <form name="form" action="/register.php" method="POST">
                           <?php
-                          if($_GET['error'] != ""){
-                            echo '<div id="error">';
-                            if($_GET['error'] == 0){
-                              echo 'email and username invalid';
-                            }else if($_GET['error'] == 1){
-                              echo 'invalid username';
-                            }else if($_GET['error'] == 2){
-                              echo 'invalid email';
-                            }else if($_GET['error'] == 3){
-                              echo ' invalid email, username and password';
-                            }else if($_GET['error'] == 4){
-                              echo 'invalid email and password';
-                            }else if($_GET['error'] == 5){
-                              echo 'invalid username and password';
-                            }else if($_GET['error'] == 6){
-                              echo 'invalid password';
+                            if($_GET['error'] != ""){
+                              echo '<div id="error">';
+                              if($_GET['error'] == 0){
+                                echo 'email and username invalid';
+                              }else if($_GET['error'] == 1){
+                                echo 'invalid username';
+                              }else if($_GET['error'] == 2){
+                                echo 'invalid email';
+                              }else if($_GET['error'] == 3){
+                                echo ' invalid email, username and password';
+                              }else if($_GET['error'] == 4){
+                                echo 'invalid email and password';
+                              }else if($_GET['error'] == 5){
+                                echo 'invalid username and password';
+                              }else if($_GET['error'] == 6){
+                                echo 'invalid password';
+                              }
+                              echo '</div>';
                             }
-                            echo '</div>';
-                          }
                           ?>
                             <script>
                             t = setTimeout(function(){removeElement("error") }, 4000);

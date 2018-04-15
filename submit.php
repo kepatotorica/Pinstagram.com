@@ -44,12 +44,48 @@ $name = $users[1]['user_name'];
                 <div class="mySubmitBox glow-box">
 
 
+                  <!-- <form name="form" action="/register.php" method="POST"> -->
+                    <?php
+                    if($_GET['error'] != ""){
+                      echo '<div id="error">';
+                      echo $_GET['error'];
+                      // if($_GET['error'] == 0){
+                      //   echo 'email and username invalid';
+                      // }else if($_GET['error'] == 1){
+                      //   echo 'invalid username';
+                      // }else if($_GET['error'] == 2){
+                      //   echo 'invalid email';
+                      // }
+                      echo '</div>';
+                    }
+                    ?>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+                      <script>
+                      t = setTimeout(function(){removeElement("error") }, 2000);
+                      function removeElement(elementId) {
+                        var element = document.getElementById(elementId);
+                        element.parentNode.removeChild(element);
+                      }
+                      //
+                      // $(document).ready(function(){
+                      //         $("error").fadeOut()
+                      // });
+
+                      </script>
+                      <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+
+
+
+
+
+
+
                   <form action="upload.php" method="POST" enctype="multipart/form-data">
-<!--key:  AIzaSyBFHdhSSicB64ul8JDHCFZQkJeo1Na43hY -->
               <?php
                     echo '<div><input type="text" class="text_box" name="title" placeholder="title" onkeypress="return isNumberKey(event)" maxlength="100" required="required" title="max length of 100 characters" value="'.$_SESSION["enterTitle"].'"></div>
                           <input id="locationTextField" type="text" class="text_box" name="address" onkeypress="return isNumberKey(event)" maxlength="255" required="required" title="max length of 255 characters" value="'.$_SESSION["enterAddress"].'">
-                          <textarea rows="4" cols="30" class="text_box" name="description" placeholder="description" onkeypress="return isNumberKey(event)" maxlength="255" required="required" title="max length of 255 characters" value="'.$_SESSION["enterDesc"] .'"></textarea>';
+                          <textarea rows="4" cols="30" class="text_box" name="description" placeholder="description" onkeypress="return isNumberKey(event)" maxlength="255" required="required" title="max length of 255 characters" value="'.$_SESSION["enterDesc"] .'">'.$_SESSION["enterDesc"].'</textarea>';
               ?>
                     <!-- <div><a class="myPictureContainer"> -->
                         <!-- <div class="tx"> -->
