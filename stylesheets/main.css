@@ -1,11 +1,16 @@
 .body {
   overflow: hidden;
   background-color: rgba(100, 100, 100, 1);
-  font-family: Helvetica;
+  font-family: 'Ubuntu', sans-serif;
+  /* font-family: Helvetica; */
 }
-
+/*api font key  AIzaSyDttAWLmPlWWV6Gr4QV6IOGg9036pi45NA  */
 /*header buttons*/
 
+textarea,text,input,submit,label,inputfile{
+  font-family: 'Ubuntu', sans-serif;
+  color:white;
+}
 .button {
   text-decoration: none;
   color: rgba(186, 186, 186, 0.8);
@@ -20,7 +25,7 @@
   position: fixed;
   z-index: 1000;
   top: 0%;
- transform: translate(-50%,0%);
+  transform: translate(-50%,0%);
 }
 
 .button_current {
@@ -320,6 +325,10 @@ div.submit {
   /*    transform: translate(0%,-20%);*/
   /*    position: relative;*/
 }
+/*
+#flexHolder{
+  display: flex;
+} */
 
 div.si {
   font-size: 50;
@@ -332,15 +341,16 @@ span.signInText {
 }
 
 input.text_box {
-  color: white;
+  /* color: white; */
   background-color: black;
   padding-bottom: 1%;
   padding-top: 1%;
   width: 40%;
   padding-left: 1%;
   padding-right: 1%;
+  flex: 0 0 0;
   /*    padding-right: 150px;*/
-  position: relative;
+  /* position: relative; */
   margin-top: 1%;
   font-size: 23px;
   border: 3px solid rgba(80, 80, 80, 1);
@@ -352,7 +362,7 @@ input.text_box {
 }
 
 text.on_submit {
-  color: white;
+  /* color: white; */
   background-color: black;
   padding-bottom: 1%;
   padding-top: 1%;
@@ -374,8 +384,7 @@ textarea.text_box {
   padding-top: 1%;
   padding-left: 1%;
   padding-right: 1%;
-  font-family: inherit;
-  color: white;
+  /* color: white; */
   background-color: black;
   position: relative;
   margin-top: 5%;
@@ -385,17 +394,11 @@ textarea.text_box {
   margin-left: 50%;
   transform: translate(-50%, 0%);
   width: 95%;
-  /*
-    padding-left: 3;
-    right: 3;
-    */
-  /* text-align: center; */
 }
 
 input.submit {
   font-size: 36;
-  font-family: inherit;
-  color: white;
+  /* color: white; */
   margin-left: 50%;
   background-color: black;
   transform: translate(-50%, 100%);
@@ -524,11 +527,11 @@ button.submitbutton {
     padding-left: 1%;
     border-color:  rgba(255, 255, 255, .5);
     border-style: solid;
+    color: grey;
     /* padding-right: 25%; */
     margin-top: 5%;
     /* padding-bottom: 20%; */
     /* this is where I left off */
-    color: white;
     background-color: black;
     border-radius: 10px;
     transition: all 0.2s ease-in-out;

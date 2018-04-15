@@ -28,6 +28,7 @@ $imgTitle = $picture[0]['pic_title'];
 ?>
 
 <head>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link rel="stylesheet" href="stylesheets/picture.css">
 </head>
 

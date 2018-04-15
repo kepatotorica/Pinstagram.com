@@ -10,6 +10,7 @@ $userId = 1;//left it here just incase
 <title>home</title>
 <head>
   <link rel="icon" href="/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link rel="stylesheet" href="stylesheets/main.css">
     <script>
     function showUser(str,addy) {

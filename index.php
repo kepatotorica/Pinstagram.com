@@ -6,7 +6,9 @@ $_SESSION["currPic"] = 1;
 <title>register</title>
 <head>
   <link rel="icon" href="/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link rel="stylesheet" href="stylesheets/main.css">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
 </head>
 
 <body class="body">
@@ -22,12 +24,15 @@ $_SESSION["currPic"] = 1;
           }
           ?>
         </div>
+
         <div id="gmap-content">
             <div class="signIn">
                <!-- style="top:-100px;"> -->
+
                 <div id="container" >
                     <div id="content">
 <!--                        <form>-->
+<!-- <div id="flexHolder"> -->
                         <form name="form" action="/register.php" method="POST">
                           <?php
                           if($_GET['error'] != ""){

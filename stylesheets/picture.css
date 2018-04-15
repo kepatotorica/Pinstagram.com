@@ -1,3 +1,14 @@
+.body {
+  /* overflow: hidden; */
+  /* background-color: rgba(100, 100, 100, 1); */
+  font-family: 'Ubuntu', sans-serif;
+  /* font-family: Helvetica; */
+}
+
+desc{
+  font-family: 'Ubuntu', sans-serif;
+}
+
 div.gallery {
   position: fixed;
   /* margin-left: 50%; */
@@ -26,6 +37,7 @@ div.gallery:hover {
 }
 
 div.gallery:hover>div.desc {
+  font-family: 'Ubuntu', sans-serif;
   color: white;
   background: rgba(20, 20, 20, 1);
   color: white;
