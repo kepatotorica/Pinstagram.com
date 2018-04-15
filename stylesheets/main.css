@@ -146,6 +146,11 @@ textarea,text,input,submit,label,inputfile{
   transition: all 0.2s ease-in-out;
 }
 
+.current_loc{
+  color: black;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 10px 2px rgb(255, 255, 255);
+}
 .glow_loc:hover {
   color: black;
   background: rgba(255, 255, 255, 1);
@@ -550,19 +555,56 @@ button.submitbutton {
 }
 
 #error{
-  position: relative;
+  position: fixed;
   left:50%;
-  /* top: 8%; */
+  top: 0%;
   color: black;
   z-index: 1000;
   transform: translate(-50%, 0%);
   /* border-top-width: 10px; */
   font-size: 100%;
   width: 37%;
-  background-color: rgba(255,0,0,.5);
+  background-color: rgba(255,0,0,1);
   padding: 1% 1% 1% 1%;
-  border-color: red;
+  border-color: black;
   border-radius: 10px;
-  border-style: dashed;
+  border-style: groove;
+
+}
+#help{
+  position: fixed;
+  left:80%;
+  top:22%;
+  display: none;
+  /* top: 8%; */
+  color: black;
+  z-index: 1000;
+  transform: translate(-50%, 0%);
+  /* border-top-width: 10px; */
+  font-size: 100%;
+  /* width: 37%; */
+  background-color: rgba(140,140,140,1);
+  padding: 1% 1% 1% 1%;
+  border-color: black ;
+  border-radius: 10px;
+
+}
+
+#helpButton{
+  position: fixed;
+  left:67%;
+  top:29%;
+  /* top: 8%; */
+  color: black;
+  z-index: 1000;
+  transform: translate(-50%, 0%);
+  /* border-top-width: 10px; */
+  font-size: 100%;
+  /* width: 37%; */
+  background-color: rgba(140,140,140,1);
+  padding: 1% 1% 1% 1%;
+  border-color: black ;
+  border-radius: 10px;
+  /* border-style: dashed; */
 
 }

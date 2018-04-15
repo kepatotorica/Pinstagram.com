@@ -82,8 +82,11 @@ $name = $users[1]['user_name'];
 
 
                   <form action="upload.php" method="POST" enctype="multipart/form-data">
+                    <!-- I was going to add labels, but I think a placeholder looks better -->
               <?php
-                    echo '<div><input type="text" class="text_box" name="title" placeholder="title" onkeypress="return isNumberKey(event)" maxlength="100" required="required" title="max length of 100 characters" value="'.$_SESSION["enterTitle"].'"></div>
+                    echo '
+                    <label for="title"></label>
+                    <div><input type="text" class="text_box" name="title" placeholder="title" onkeypress="return isNumberKey(event)" maxlength="100" required="required" title="max length of 100 characters" value="'.$_SESSION["enterTitle"].'"></div>
                           <input id="locationTextField" type="text" class="text_box" name="address" onkeypress="return isNumberKey(event)" maxlength="255" required="required" title="max length of 255 characters" value="'.$_SESSION["enterAddress"].'">
                           <textarea rows="4" cols="30" class="text_box" name="description" placeholder="description" onkeypress="return isNumberKey(event)" maxlength="255" required="required" title="max length of 255 characters" value="'.$_SESSION["enterDesc"] .'">'.$_SESSION["enterDesc"].'</textarea>';
               ?>

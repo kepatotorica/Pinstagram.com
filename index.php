@@ -64,17 +64,20 @@ $_SESSION["currPic"] = 1;
                             </script>
                             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
+                            <!-- <label for="password" id="#error"> passwords must have 1 number, lowercase letter, and uppercause letter. Must be longer than 8 characters</label> -->
                             <?php
                             echo '<input type="text" placeholder="username" id="username" class="text_box" name="username" required="required" value="'.$_SESSION["enterUser"].'">'.
                             '<input type="email" placeholder="email" id="email" class="text_box" name="email" required="required" value="'.$_SESSION["enterEmail"].'">'.
-                            '<input type="password" placeholder="password"  id="password" class="text_box" name="password" required="required" title="password must have atleast 8 characters, 1 number, one Uppercase and one Lowecase letter" value="'.$_SESSION["enterPassword"].'">'.
-                              '<input type="password" placeholder="confirm password" name="confirm_password" id="confirm_password" class="text_box" name="passwordAgain" required="required" title="password must have atleast 8 characters, 1 number, one Uppercase and one Lowecase letter" value="'.$_SESSION["enterConfirmPassword"].'">'.
+                            '<div id="help">password must have atleast 8 characters, one number, one Uppercase and one Lowecase letter</div>'.
+                            '<input type="password" placeholder="password"  id="password" class="text_box" name="password" required="required" title="password must have atleast 8 characters, one number, one Uppercase and one Lowecase letter" value="'.$_SESSION["enterPassword"].'">'.
+                            '<input type="password" placeholder="confirm password" name="confirm_password" id="confirm_password" class="text_box" name="passwordAgain" required="required" title="password must have atleast 8 characters, 1 number, one Uppercase and one Lowecase letter" value="'.$_SESSION["enterConfirmPassword"].'">'.
                             '<input type="submit" id="register" class="submit" value="Register">';
                             ?>
                         </form>
 
+                        <button id="helpButton">?</button>
                         <script>
-                        $('#confirm_password').on('keyup', function () {
+                        $('#password, #confirm_password').on('keyup', function () {
                           if ($('#password').val() == $('#confirm_password').val()) {
                             $('#confirm_password').css('background-color', 'green');
                             $('#register').removeAttr("disabled");
@@ -87,6 +90,14 @@ $_SESSION["currPic"] = 1;
                           // $('#password').css('background-color', 'red');
                         });
                       </script>
+
+                      <script>
+                        $(document).ready(function(){
+                            $("button").click(function(){
+                                $("#help").toggle();
+                              });
+                            });
+                    </script>
 
                           <!-- <span id='message'>asdgasdgasdgasdgasdf</span> -->
                         <form name="form" action="/register.php" method="POST">

@@ -5,7 +5,7 @@ CREATE TABLE users (
     user_id    INT(8) NOT NULL AUTO_INCREMENT,
     user_email  VARCHAR(255) NOT NULL,
     user_name   VARCHAR(30) NOT NULL,
-    user_pass   VARCHAR(255) NOT NULL,
+    user_pass   CHAR(32) NOT NULL,
     user_date   DATETIME DEFAULT CURRENT_TIMESTAMP,
     user_mod    TINYINT(1) DEFAULT 0,
     UNIQUE INDEX user_name_unique (user_name),

@@ -11,7 +11,7 @@ $userId = 1;//left it here just incase
     <link rel="icon" href="/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link rel="stylesheet" href="stylesheets/main.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>
   function showUser(str,addy) {
     var el = document.getElementById('txtHint');
@@ -37,6 +37,13 @@ $userId = 1;//left it here just incase
       }
   }
   </script>
+  <!-- <script>
+    $(document).ready(function(){
+        $(".loc_button, glow_loc").click(function(){
+            $(".button_current").toggle();
+          });
+        });
+</script> -->
 </head>
 
 <body class="body">
@@ -50,7 +57,10 @@ $userId = 1;//left it here just incase
       // echo '<div><a href="user.php" class="button_current" disabled>My pictures</a></div><div><a href="browse.php"  class="button glow-button">Browse</a></div><div><a href="home.php"  class="button glow-button">home</a></div><div><a href="signIn.php" class="button glow-button">sign out</a></div>';
     // }else{
       //if this isn't the person logged in
-      echo '<div><a href="user.php" class="button_current" title="user that you are currently viewing" disabled>' . $_SESSION["currViewUser"] . '</a></div><div><a href="browse.php"  class="button glow-button">Browse</a></div><div><a href="home.php"  class="button glow-button">home</a></div><div><a href="signIn.php" class="button glow-button">sign out</a></div>';
+      echo '<div><a href="user.php" class="button_current" title="user that you are currently viewing" disabled>' . $_SESSION["currViewUser"] . '</a></div>'.
+      '<div><a href="browse.php"  class="button glow-button">Browse</a>'.
+      '</div><div><a href="home.php"  class="button glow-button">home</a></div>'.
+      '<div><a href="signIn.php" class="button glow-button">sign out</a></div>';
     // }
     ?>
 </div>
