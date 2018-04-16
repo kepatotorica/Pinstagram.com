@@ -17,7 +17,7 @@ div.gallery {
   /* margin-top: 20%; */
   top: 50%;
   left: 50%;
-  border: .2vw solid rgba(20, 20, 20, 1);
+  /* border: .2vw solid rgba(20, 20, 20, 1); */
   /* border-radius: 10px; */
   /* float: left; */
   width: 5%;
@@ -26,6 +26,7 @@ div.gallery {
   transform: translate(-50%, -50%);
   font-family: 'Ubuntu', sans-serif;
   font-size: 1vmax;
+  border-radius: 1vw;
   /* transition: all 0.3s ease-in-out; */
 }
 
@@ -39,6 +40,7 @@ div.gallery:hover {
   color: rgba(255, 255, 255, .1);
   font-family: 'Ubuntu', sans-serif;
   font-size: 1vmax;
+  border-radius: 1vw;
   /* transition: all 0.4s ease-in-out; */
 }
 
@@ -49,6 +51,7 @@ div.gallery:hover>div.desc {
   background: rgba(20, 20, 20, 1);
   color: white;
   display: block;
+  border-radius: 1vw;
 }
 
 div.gallery:hover>img {
@@ -68,6 +71,7 @@ div.gallery:active>img {
   filter: alpha(opacity=100);
   font-family: 'Ubuntu', sans-serif;
   font-size: 1vmax;
+  border-radius: 1vw;
 }
 
 div.gallery:active>div.desc {
@@ -91,6 +95,7 @@ div.gallery img {
   font-size: 1vmax;
   border-color: white;
   background-color: white;
+  border-radius: 1vw;
 }
 
 div.desc {
@@ -101,4 +106,5 @@ div.desc {
   display: none;
   font-family: 'Ubuntu', sans-serif;
   font-size: 1vmax;
+  border-radius: 1vw;
 }
