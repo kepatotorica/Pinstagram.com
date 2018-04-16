@@ -166,12 +166,12 @@ textarea,text,input,submit,label,inputfile{
   text-decoration: none;
   position: fixed;
   color: rgba(186, 186, 186, 1);
-  background: rgba(0, 0, 0, 1);
+  background: rgba(0, 0, 0, .8);
   padding: 30px 10px 30px 10px;
   border-radius: 80px;
   font-weight: normal;
   transition: all 0.2s ease-in-out;
-  box-shadow: 0px 0px 10px 2px rgb(255, 255, 255);
+  /* box-shadow: 0px 0px 10px 2px rgb(255, 255, 255); */
   right: 5%;
   bottom: 5%;
 }
@@ -279,6 +279,21 @@ div.spacedFooter span:last-child {
   background-color: rgba(100, 100, 100, 1);
   text-align: right;
 }
+
+#spanImg{
+  position: fixed;
+  right: 0%;
+  top: 0%;
+  height: 5%;
+  width: auto;
+  z-index: 10;
+}
+
+/* span img:hover{
+  height:15%;
+} */
+
+
 
 div.inline {
   float: left;

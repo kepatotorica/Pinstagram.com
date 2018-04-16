@@ -22,7 +22,7 @@ div.gallery {
   z-index: 1000;
   background: rgba(10, 10, 10, .3);
   transform: translate(-50%, -50%);
-    font-family: 'Ubuntu', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   /* transition: all 0.3s ease-in-out; */
 }
 
@@ -80,7 +80,9 @@ div.gallery img {
   opacity: 0.6;
   filter: alpha(opacity=50);
   transition: all 0.2s ease-in-out;
-    font-family: 'Ubuntu', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
+  border-color: white;
+  background-color: white;
 }
 
 div.desc {
