@@ -28,7 +28,7 @@ if(isset($_POST['signIn'])){
            echo 'successful login '. htmlspecialchars($username) . '<br>';
            $_SESSION["currUser"] = $username;
            $_SESSION["currId"] = $users[$i]['user_id'];
-           $_SESSION["currViewUser"] = $username;
+           $_SESSION["currViewUser"] = "no one";
            $_SESSION["currViewId"] = $users[$i]['user_id'];
            $_SESSION["enterUser"] = "";
            $_SESSION["enterPass"] = "";

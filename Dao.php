@@ -28,7 +28,7 @@ require_once 'KLogger.php';
          $query->bindParam(':email', $email);
          $query->bindParam(':name', $name);
          $query->bindParam(':pass', $pass);
-         $this->logger->logDebug(__FUNCTION__ . " name=[{$name}] comment=[{$comment}]");
+         // $this->logger->logDebug(__FUNCTION__ . " name=[{$name}] comment=[{$comment}]");
          $query->execute();
      }
        public function getUsers () {
@@ -37,7 +37,7 @@ require_once 'KLogger.php';
            $query->setFetchMode(PDO::FETCH_ASSOC);
            $query->execute();
            $results = $query->fetchAll();
-           $this->logger->logDebug(__FUNCTION__ . " " . print_r($results,1));
+           // $this->logger->logDebug(__FUNCTION__ . " " . print_r($results,1));
            return $results;
        }
        public function usedName ($username) {
@@ -47,7 +47,7 @@ require_once 'KLogger.php';
          $query->setFetchMode(PDO::FETCH_ASSOC);
          $query->execute();
          $results = $query->fetchAll();
-         $this->logger->logDebug(__FUNCTION__ . " " . print_r($results,1));
+         // $this->logger->logDebug(__FUNCTION__ . " " . print_r($results,1));
          return $results;
        }
        public function usedEmail ($email) {
@@ -57,7 +57,7 @@ require_once 'KLogger.php';
          $query->setFetchMode(PDO::FETCH_ASSOC);
          $query->execute();
          $results = $query->fetchAll();
-         $this->logger->logDebug(__FUNCTION__ . " " . print_r($results,1));
+         // $this->logger->logDebug(__FUNCTION__ . " " . print_r($results,1));
          return $results;
        }
        //#TODO finish making this method with files stored on heroku filesystem
@@ -69,7 +69,7 @@ require_once 'KLogger.php';
            $query->bindParam(':add', $add);
            $query->bindParam(':desc', $desc);
            $query->bindParam(':filePath', $filePath);
-           $this->logger->logDebug(__FUNCTION__ . " name=[{$name}] comment=[{$comment}]");
+           // $this->logger->logDebug(__FUNCTION__ . " name=[{$name}] comment=[{$comment}]");
            $query->execute();
        }
          public function getImgs () {
@@ -78,7 +78,7 @@ require_once 'KLogger.php';
              $query->setFetchMode(PDO::FETCH_ASSOC);
              $query->execute();
              $results = $query->fetchAll();
-             $this->logger->logDebug(__FUNCTION__ . " " . print_r($results,1));
+             // $this->logger->logDebug(__FUNCTION__ . " " . print_r($results,1));
              return $results;
          }
          public function getUserImgs ($id) {
@@ -88,7 +88,7 @@ require_once 'KLogger.php';
              $query->setFetchMode(PDO::FETCH_ASSOC);
              $query->execute();
              $results = $query->fetchAll();
-             $this->logger->logDebug(__FUNCTION__ . " " . print_r($results,1));
+             // $this->logger->logDebug(__FUNCTION__ . " " . print_r($results,1));
              return $results;
          }
          public function getImgFromId ($id) {
@@ -98,7 +98,7 @@ require_once 'KLogger.php';
             $query->setFetchMode(PDO::FETCH_ASSOC);
             $query->execute();
             $results = $query->fetchAll();
-            $this->logger->logDebug(__FUNCTION__ . " " . print_r($results,1));
+            // $this->logger->logDebug(__FUNCTION__ . " " . print_r($results,1));
             return $results;
         }
          public function getUserId ($username) {
@@ -108,8 +108,21 @@ require_once 'KLogger.php';
              $query->setFetchMode(PDO::FETCH_ASSOC);
              $query->execute();
              $results = $query->fetchAll();
-             $this->logger->logDebug(__FUNCTION__ . " " . print_r($results,1));
+             // $this->logger->logDebug(__FUNCTION__ . " " . print_r($results,1));
              return $results;
          }
+         public function updateImg ($id, $title, $add, $desc) {
+             $conn = $this->getConnection();
+             // $query = $conn->prepare("UPDATE pictures SET pic_title = ':title', pic_address = ':add', pic_desc = ':desc' WHERE pic_id = :id");
+             $query = $conn->prepare("UPDATE pictures SET pic_title = :title, pic_address = :add, pic_desc = :desc WHERE pic_id = :id");
+             $query->bindParam(':title', $title);
+             $query->bindParam(':id', $id);
+             $query->bindParam(':add', $add);
+             $query->bindParam(':desc', $desc);
+             // $query->bindParam(':filePath', $filePath);
+             // $this->logger->logDebug(__FUNCTION__ . " name=[{$name}] comment=[{$comment}]");
+             $query->execute();
+         }
+
  }
 ?>

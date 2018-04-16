@@ -108,3 +108,49 @@ div.desc {
   font-size: 1vmax;
   border-radius: 1vw;
 }
+.editButton{
+  text-decoration: none;
+  position: fixed;
+  color: rgba(186, 186, 186, 1);
+  background: rgba(0, 0, 0, .8);
+  padding: 1vw 1vw 1vw 1vw;
+  border-radius: 80px;
+  border-style: none;
+  font-weight: normal;
+  transition: all 0.2s ease-in-out;
+  /* box-shadow: 0px 0px 10px 2px rgb(255, 255, 255); */
+  right: 5%;
+  bottom: 15%;
+}
+
+.editButton:hover{
+  color: black;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 10px 2px rgb(255, 255, 255);
+  cursor: pointer;
+  border-radius: .2vw;
+}
+.button2{
+  text-decoration: none;
+  position: fixed;
+  color: rgba(186, 186, 186, 1);
+  background: rgba(0, 0, 0, .8);
+  padding: 1vw 1vw 1vw 1vw;
+  border-radius: 80px;
+  border-style: none;
+  font-weight: normal;
+  transition: all 0.2s ease-in-out;
+  /* box-shadow: 0px 0px 10px 2px rgb(255, 255, 255); */
+  right: 5%;
+  bottom: 15%;
+}
+
+.button2:hover{
+  color: black;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 10px 2px rgb(255, 255, 255);
+  cursor: pointer;
+  border-radius: .2vw;
+}

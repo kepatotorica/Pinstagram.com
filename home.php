@@ -5,6 +5,7 @@ require_once 'sessionCheck.php';
 include_once 'Dao.php';
 $dao = new Dao();
 $userId = 1;//left it here just incase
+
 ?>
 
 <title>home</title>
