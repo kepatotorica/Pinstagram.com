@@ -39,7 +39,7 @@ if(isset($_POST['submit'])){
   if(in_array($fileActualExt, $allowed)){
       if($fileError === 0){
         // if($fileSize < 3939841*3){
-        if($fileSize < 393941*3){
+        if($fileSize < 3939841*3){
           $fileNameNew = uniqid('',true).".".$fileActualExt;
           $numImgs = count($dao->getImgs());
           // $folder = round(count($dao->getImgs()) / 1000));//this is probably really slow, maybe make a table that counts pictures?
