@@ -531,7 +531,7 @@ button.submitbutton {
     /* padding-bottom: 20%; */
     /* this is where I left off */
     background-color: black;
-    border-radius: .2vw;
+    border-radius: 1vw;
     transition: all 0.2s ease-in-out;
     display: inline-block;
     text-align: center;
