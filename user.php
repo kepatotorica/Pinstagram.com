@@ -92,7 +92,7 @@ $userId = 1;//left it here just incase
       $userId = $_SESSION["currViewId"];
       // echo htmlspecialchars($_SESSION['currViewUser']).'<br>';
       $userImgs = $dao->getUserImgs($userId);
-      $userImgs = $dao->getImgs();
+      // $userImgs = $dao->getImgs();
       for( $i = 0; $i<count($userImgs); $i++ ) {
         echo '<input type="button" class="loc_button glow_loc" value="' .  htmlspecialchars($userImgs[$i]['pic_title']) . '" name="'. htmlspecialchars($userImgs[$i]['pic_id']).'" title="'. htmlspecialchars($userImgs[$i]['pic_address']).'" onclick="showUser(this.name,this.title)"><br>';
       }

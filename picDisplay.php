@@ -43,7 +43,10 @@ $imgTitle = $picture[0]['pic_title'];
   <?php
   // echo '<div class="desc"><pre>'.print_r($_GET,1).'</pre></div>';
     // echo '<div class="desc">id= '.$id.'</div>';
-    echo '<div class="desc">'.htmlspecialchars($imgTitle).'</div>';
+    echo '<div class="desc">'.
+    htmlspecialchars($imgTitle).
+    '<button>make private</button>'.
+    '</div>';
     echo '<img src="'.htmlspecialchars($filePath).'" alt="'.htmlspecialchars($imgTitle).'" width="10%" height="10%">';
     echo '<div class="desc">'.htmlspecialchars($imgDesc).'</div>';
   ?>

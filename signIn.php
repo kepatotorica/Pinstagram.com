@@ -1,4 +1,3 @@
-<!--#sessions and cookies stuff set here?-->
 <title>sign in</title>
 <?php
 session_start();
