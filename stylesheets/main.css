@@ -3,6 +3,7 @@
   background-color: rgba(100, 100, 100, 1);
   font-family: 'Ubuntu', sans-serif;
   /* font-family: Helvetica; */
+  font-size: 1vmax;
 }
 /*api font key  AIzaSyDttAWLmPlWWV6Gr4QV6IOGg9036pi45NA  */
 /*header buttons*/
@@ -10,12 +11,14 @@
 textarea,text,input,submit,label,inputfile{
   font-family: 'Ubuntu', sans-serif;
   color:white;
+  font-size: 1vmax;
 }
 .button {
   text-decoration: none;
   color: rgba(186, 186, 186, 0.8);
   background-color: rgba(10, 10, 10, .8);
-  padding: 10px 15px;
+  /* padding: 1px 15px; */
+  padding: 1vw 1vw;
   /* margin: 10, 10; */
   top: 10px;
   border-radius: 200px;
@@ -32,9 +35,9 @@ textarea,text,input,submit,label,inputfile{
   text-decoration: none;
   color: rgba(0, 0, 0, 0.8);
   background-color: rgba(186, 186, 186, 1);
-  padding: 10px 15px;
+  padding: 1vw 1vw;
   margin: 10, 10;
-  border-radius: 4px;
+  border-radius: .2vw;
   font-weight: normal;
   text-transform: uppercase;
   transition: all 0.2s ease-in-out;
@@ -51,7 +54,7 @@ textarea,text,input,submit,label,inputfile{
   /*    color: rgba(255, 255, 255, 1);*/
   /*    background-color: rgba(20,20,20,1);*/
   transition: all 0.2s ease-in-out;
-  border-radius: 4px;
+  border-radius: .2vw;
   background-color: rgba(255, 255, 255, 1);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 1);
 }
@@ -80,9 +83,9 @@ textarea,text,input,submit,label,inputfile{
 /*scrollable text field*/
 
 .myBox {
-  border-radius: 25px;
-  padding: 5px;
-  font: 24px/36px sans-serif;
+  border-radius: 3vw;
+  padding: 1vw;
+  /* font: 24px/36px sans-serif; */
   width: 20%;
   height: 80% !important;
   overflow-y: auto;
@@ -100,7 +103,7 @@ textarea,text,input,submit,label,inputfile{
   direction: ltr;
   background: rgba(20, 20, 20, 1);
   box-shadow: 0 0px 0px 1px rgba(0, 0, 0, 1);
-  border-radius: 5px;
+  border-radius: 1vw;
   /*    position: relative;*/
   color: rgba(255, 255, 255, .1);
 }
@@ -135,11 +138,11 @@ textarea,text,input,submit,label,inputfile{
 /*location buttons*/
 
 .loc_button {
-  font-size: 20px;
+  font-size: 1vmax;
   text-decoration: none;
   background-color: rgba(186, 186, 186, 0);
   color: rgba(186, 186, 186, 0.8);
-  padding: 5px 5px 5px 5px;
+  padding: .5vw .5vw .5vw .5vw;
   border-radius: 4px;
   border-color: rgba(186, 186, 186, 0);
   font-weight: normal;
@@ -155,6 +158,8 @@ textarea,text,input,submit,label,inputfile{
   color: black;
   background: rgba(255, 255, 255, 1);
   box-shadow: 0px 0px 10px 2px rgb(255, 255, 255);
+  transition: all 0.2s ease-in-out;
+  border-radius: .2vw;
 }
 
 .glow-loc:active {
@@ -167,7 +172,7 @@ textarea,text,input,submit,label,inputfile{
   position: fixed;
   color: rgba(186, 186, 186, 1);
   background: rgba(0, 0, 0, .8);
-  padding: 30px 10px 30px 10px;
+  padding: 1vw 1vw 1vw 1vw;
   border-radius: 80px;
   font-weight: normal;
   transition: all 0.2s ease-in-out;
@@ -179,10 +184,10 @@ textarea,text,input,submit,label,inputfile{
 .submit {
   text-decoration: none;
   color: rgba(186, 186, 186, 0.8);
-  padding: 5px 5px 5px 5px;
-  border-radius: 4px;
-  font-weight: normal;
-  margin-bottom: 1%;
+  padding: 1vw 1vw 1vw 1vw;
+  /* border-radius: 4px; */
+  font-weight: bold;
+  /* margin-bottom: 1%; */
   /* float: right; */
   transition: all 0.2s ease-in-out;
 }
@@ -193,10 +198,11 @@ textarea,text,input,submit,label,inputfile{
   background: rgba(255, 255, 255, 1);
   box-shadow: 0px 0px 10px 2px rgb(255, 255, 255);
   cursor: pointer;
+  border-radius: .2vw;
 }
 
 li {
-  padding: 2px 0px 15px 0px;
+  padding: 1vw 0px 1vw 0px;
 }
 
 /*map*/
@@ -306,29 +312,29 @@ div.submit {
   /*    left: 12%;*/
   left: 230px;
   bottom: 87%;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
   display: table;
   width: 100%;
   table-layout: fixed;
   z-index: 1;
 }
 
-/*the next sextion is the styling for the signIn*/
+/*the next section is the styling for the signIn*/
 
 .signIn {
   position: relative;
   top: 0;
   /*    left: 25%;*/
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 1%;
+  margin-left: 7vw;
+  margin-right: 7vw;
+  margin-top: 5vw;
   /*    margin-bottom: 10%;*/
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-top: 5%;
-  padding-bottom: 5%;
-  border-radius: 200px;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-top: 5vw;
+  padding-bottom: 5vw;
+  border-radius: 2vw;
   /*    display:flex;*/
   color: white;
   justify-content: center;
@@ -336,12 +342,12 @@ div.submit {
 }
 
 #content {
-  /*    font-size: 30px;*/
+  font-size: 1vmax;
   background: rgba(100, 100, 100, 1);
   /*    padding-left: 50%;*/
   /*    padding-right: 30%;*/
-  padding-bottom: 10%;
-  border-radius: 200px;
+  padding-bottom: 5vw;
+  border-radius: 1vw;
   /*    transform: translate(0%,-20%);*/
   /*    position: relative;*/
 }
@@ -351,7 +357,7 @@ div.submit {
 } */
 
 div.si {
-  font-size: 50;
+    font-size: 1vmax;
 }
 
 span.signInText {
@@ -363,18 +369,18 @@ span.signInText {
 input.text_box {
   /* color: white; */
   background-color: black;
-  padding-bottom: 1%;
-  padding-top: 1%;
+  padding-bottom: 1vw;
+  padding-top: 1vw;
   width: 40%;
-  padding-left: 1%;
-  padding-right: 1%;
+  padding-left: 1vw;
+  padding-right: 1vw;
   flex: 0 0 0;
   /*    padding-right: 150px;*/
   /* position: relative; */
-  margin-top: 1%;
-  font-size: 23px;
-  border: 3px solid rgba(80, 80, 80, 1);
-  border-radius: 10px;
+  margin-top: 1vw;
+    font-size: 1vmax;
+  border: .2vw solid rgba(80, 80, 80, 1);
+  border-radius: 1vw;
   margin-left: 50%;
   transform: translate(-50%, 0%);
   /*    right: 3;*/
@@ -384,15 +390,15 @@ input.text_box {
 text.on_submit {
   /* color: white; */
   background-color: black;
-  padding-bottom: 1%;
-  padding-top: 1%;
-  padding-left: 1%;
-  padding-right: 1%;
+  padding-bottom: 1vw;
+  padding-top: 1vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
   position: relative;
-  margin-top: 5%;
-  font-size: 23px;
-  border: 3px solid rgba(80, 80, 80, 1);
-  border-radius: 10px;
+  margin-top: 1vw;
+    font-size: 1vmax;
+  border: .2vw solid rgba(80, 80, 80, 1);
+  border-radius: 1vw;
   margin-left: 50%;
   transform: translate(-50%, 0%);
   /*    right: 3;*/
@@ -400,33 +406,33 @@ text.on_submit {
 }
 
 textarea.text_box {
-  padding-bottom: 1%;
-  padding-top: 1%;
-  padding-left: 1%;
-  padding-right: 1%;
+  padding-bottom: 1vw;
+  padding-top: 1vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
   /* color: white; */
   background-color: black;
   position: relative;
-  margin-top: 5%;
-  font-size: 23px;
-  border: 3px solid rgba(80, 80, 80, 1);
-  border-radius: 10px;
+  margin-top: 1vw;
+    font-size: 1vmax;
+  border: .2vw solid rgba(80, 80, 80, 1);
+  border-radius: 1vw;
   margin-left: 50%;
   transform: translate(-50%, 0%);
   width: 95%;
 }
 
 input.submit {
-  font-size: 36;
+    font-size: 1vmax;
   /* color: white; */
   margin-left: 50%;
   background-color: black;
   transform: translate(-50%, 100%);
   border: 0px solid rgba(0, 0, 0, .1);
-  padding-bottom: 10;
-  padding-top: 10;
-  padding-right: 10;
-  padding-left: 10;
+  padding-bottom: 1vw;
+  padding-top: 1vw;
+  padding-right: 1vw;
+  padding-left: 1vw;
   border-radius: 200px;
   z-index: 11;
   transition: all .2s ease-in-out;
@@ -515,17 +521,17 @@ button.submitbutton {
 
 .inputfile + label {
     width: 95%;
-    height: 25%;
-    padding-left: 1%;
-    border-color:  rgba(255, 255, 255, .5);
+    height: 10vw;
+    margin-left: .5vw;
+    border-color:  rgba(186, 186, 186, .5);
     border-style: solid;
     color: grey;
     /* padding-right: 25%; */
-    margin-top: 5%;
+    margin-top: 2vw;
     /* padding-bottom: 20%; */
     /* this is where I left off */
     background-color: black;
-    border-radius: 10px;
+    border-radius: .2vw;
     transition: all 0.2s ease-in-out;
     display: inline-block;
     text-align: center;
@@ -537,7 +543,7 @@ button.submitbutton {
   box-shadow: 0px 0px 10px 2px rgb(255, 255, 255);
 }
 .inputfile + label:hover {
-  background: rgba(0, 0, 255, .5);
+  background: rgba(255, 255, 255, .1);
   box-shadow: 0px 0px 10px 2px rgb(255, 255, 255);
 }
 
@@ -549,7 +555,7 @@ button.submitbutton {
   z-index: 1000;
   transform: translate(-50%, 0%);
   /* border-top-width: 10px; */
-  font-size: 100%;
+    font-size: 1vmax;
   width: 37%;
   background-color: rgba(255,0,0,1);
   padding: 1% 1% 1% 1%;
@@ -569,32 +575,33 @@ button.submitbutton {
   z-index: 1000;
   transform: translate(-50%, 0%);
   /* border-top-width: 10px; */
-  font-size: 100%;
+  font-size: 1vmax;
   /* width: 37%; */
   background-color: rgba(140,140,140,1);
-  padding: 1% 1% 1% 1%;
+  padding: 1vw 1vw 1vw 1vw;
   border-color: black ;
-  border-radius: 10px;
-    z-index: 1000;
-      font-family: 'Ubuntu', sans-serif;
+  border-radius: 1vw;
+  z-index: 1000;
+  font-family: 'Ubuntu', sans-serif;
 
 }
 
 #helpButton{
   position: fixed;
   left:67%;
-  top:29%;
+  top:22.5vw;
   /* top: 8%; */
   color: black;
   z-index: 1000;
   transform: translate(-50%, 0%);
   /* border-top-width: 10px; */
-  font-size: 100%;
+  font-size: 1vmax;
   /* width: 37%; */
   background-color: rgba(100,100,100,1);
-  padding: 1% 1.3% 1% 1.3%;
-  border-color: black ;
-  border-radius: 50px;
+  padding: 1vw 1vw 1vw 1vw;
+  border-color: black;
+  border-width: .2vw;
+  border-radius: 1vw;
     font-family: 'Ubuntu', sans-serif;
   /* border-style: dashed; */
 
@@ -603,10 +610,10 @@ button.submitbutton {
 #helpButton:hover{
   color: white;
   background-color: black;
-    font-family: 'Ubuntu', sans-serif;
-    border-radius: 10px;
-    color: black;
-    background-color: white;
+  font-family: 'Ubuntu', sans-serif;
+  border-radius: .2vw;
+  color: black;
+  background-color: white;
   transition: all 0.2s ease-in-out;
 
 }
@@ -619,3 +626,7 @@ button.submitbutton {
   /* transition: all 0.2s ease-in-out; */
 
 }
+/*
+.fileText{
+  font-family: 'Ubuntu', sans-serif;
+} */

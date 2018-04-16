@@ -98,7 +98,7 @@ $name = $users[1]['user_name'];
                         <!-- </a></div> -->
 
                     <input type="file" name="file" id="file" class="inputfile" required="required"/>
-                    <label for="file">drag or drop a file, or click to browse</label>
+                    <label for="file" class="fileText">click to browse, or take a picture</label>
                         <input type="submit" class="submit" value="upload" name="submit">
                   </form>
                 </div>

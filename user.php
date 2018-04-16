@@ -90,7 +90,7 @@ $userId = 1;//left it here just incase
 <form>
   <?php
       $userId = $_SESSION["currViewId"];
-      echo htmlspecialchars($_SESSION['currViewUser']).'<br>';
+      // echo htmlspecialchars($_SESSION['currViewUser']).'<br>';
       $userImgs = $dao->getUserImgs($userId);
       $userImgs = $dao->getImgs();
       for( $i = 0; $i<count($userImgs); $i++ ) {
