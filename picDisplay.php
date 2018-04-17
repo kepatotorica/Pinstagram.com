@@ -48,8 +48,8 @@ $edit = false;
 <div class="gallery">
   <?php
 
-  echo '<div class="desc"><pre>'.$_SESSION['currId'].'</pre></div>';
-echo '<div class="desc"><pre>'.$_SESSION["currPic"].'</pre></div>';
+  // echo '<div class="desc"><pre>'.$_SESSION['currId'].'</pre></div>';
+// echo '<div class="desc"><pre>'.$_SESSION["currPic"].'</pre></div>';
   echo '<div class="desc"><pre>'.print_r($picutre[0],1).'</pre></div>';
     // echo '<div class="desc">id= '.$id.'</div>';
     echo '<div class="desc">'.
