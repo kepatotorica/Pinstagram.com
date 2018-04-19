@@ -19,15 +19,15 @@ $imgTitle = $picture[0]['pic_title'];
 $imgDesc = $picture[0]['pic_desc'];
 $imgTitle = $picture[0]['pic_title'];
 $imgId = $picture[0]['pic_id'];
-$imgUserId = $picutre[0]['pic_user_id'];
+$imgUserId = $picture[0]['pic_user_id'];
 
 
 //display the picture
 
 $edit = false;
-// if($imgUserId == $_SESSION["currId"]){
+if($imgUserId == $_SESSION["currId"]){
   $edit = true;
-// }
+}
 
 
 
@@ -47,10 +47,6 @@ $edit = false;
 
 <div class="gallery">
   <?php
-
-  // echo '<div class="desc"><pre>'.$_SESSION['currId'].'</pre></div>';
-// echo '<div class="desc"><pre>'.$_SESSION["currPic"].'</pre></div>';
-  // echo '<div class="desc"><pre>'.print_r($picutre[0],1).'</pre></div>';
     // echo '<div class="desc">id= '.$id.'</div>';
     echo '<div class="desc">'.
     htmlspecialchars($imgTitle).
